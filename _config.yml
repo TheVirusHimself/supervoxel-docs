@@ -1,0 +1,38 @@
+# SuperVoxel user guide (GitHub Pages, Jekyll, just-the-docs remote theme).
+# GitHub builds it; nothing is installed locally. Published at https://thevirushimself.github.io/supervoxel-docs/
+title: SuperVoxel
+description: User guide for SuperVoxel, editable voxel terrain for Unreal Engine 5.8.
+url: "https://thevirushimself.github.io"
+baseurl: "/supervoxel-docs"
+remote_theme: just-the-docs/just-the-docs@v0.10.0
+plugins:
+  - jekyll-remote-theme
+  - jekyll-relative-links
+  - jekyll-seo-tag
+
+search_enabled: true
+heading_anchors: true
+
+
+gh_edit_link: true
+gh_edit_link_text: "Edit this page"
+gh_edit_repository: "https://github.com/TheVirusHimself/supervoxel-docs"
+gh_edit_branch: "main"
+gh_edit_view_mode: "edit"
+
+footer_content: "SuperVoxel by Onur C Ozdemir. Coming soon to Fab. Support: <a href=\"mailto:ocozdemir@gmail.com\">ocozdemir@gmail.com</a>"
+
+callouts:
+  warning:
+    title: Note
+    color: yellow
+
+relative_links:
+  enabled: true
+  collections: false
+
+# Writer files: in the repository, not in the site.
+exclude:
+  - README.md
+  - _template.md
+  - PUBLISH.md
