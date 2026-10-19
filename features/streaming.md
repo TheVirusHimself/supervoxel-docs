@@ -81,7 +81,8 @@ void AMyNpc::BeginPlay()
 - **Saves:** edits are saved by position, including edits to chunks that aren't loaded; they're applied when the
   chunk loads. See [Save and load](save-load.md).
 - **Multiplayer:** each client asks the server for the edits of the chunks it loads, and the server sends live edits
-  only for chunks that player has loaded. See [Multiplayer](multiplayer.md).
+  only for chunks that player has loaded. A chunk's edits are sent in one go, not paged (see Limits). See
+  [Multiplayer](multiplayer.md).
 - **Pathfinding:** a goal in chunks that aren't loaded gives a partial path as close as the loaded ground allows. See
   [Pathfinding](pathfinding.md).
 - **Structures:** Place Structure and Spawn Village work anywhere. Structure and village **rules** (spawned at
@@ -104,6 +105,10 @@ Z·Size.X·Size.Y, chunk-local, all Air on entry).
 - Height up to 65535 voxels. X and Y within about ±8.3 million voxels of the origin; far from the origin the finest
   terrain detail slowly coarsens.
 - Cave culling and render distance work as in bounded worlds ([Culling](culling.md)).
+- **Unbounded worlds with multiplayer:** a chunk's edits are sent to a player in one go (in messages of 1,500
+  changes, with all of the chunk's metadata in the last one), not paged like bounded worlds. Chunks with very large
+  edit or metadata histories (tens of thousands of edits, or thousands of metadata entries, in the chunks one player
+  loads at once) can exceed the engine's message size. Bounded worlds have no such limit.
 
 ## Troubleshooting
 

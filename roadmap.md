@@ -24,6 +24,8 @@ nav_order: 13
 - **Physics debris** from digging and collapse.
 
 ## Engine and tools
+- **Paged edit history for unbounded worlds in multiplayer**, as bounded worlds already have (see the limit on
+  [Multiplayer](features/multiplayer.md#limits)).
 - **A memory allocator comparison** for chunk data, kept only if it measures faster.
 - **A native PCG node.** In 1.0, surface sampling feeds PCG from Blueprint or C++ (see [Queries](features/queries.md)).
 

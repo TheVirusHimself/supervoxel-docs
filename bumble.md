@@ -32,6 +32,8 @@ is enabled), and multiplayer.
   3600), Sign Scale (0.9), Show Signs (Set Show Signs, Toggle Signs), Get Station Sites, Get Station Ids.
 
 ## Cameras
+Bumble's cameras and controls are demo code to copy from, not a SuperVoxel feature.
+
 Bumble has two cameras: **over the shoulder** (the default) and **first person**. **Y** switches between them (pad:
 right stick click), and the HUD always shows the key beside the hotbar.
 
@@ -205,6 +207,8 @@ while it's open. On a pad: the d-pad moves, A fills the slot, LB / RB pick the s
 | Swing Hit Time | 0.45 | Share of the swing (0..1) at which the tool hits: when the edit happens |
 
 ## Blueprint nodes on Bumble
+These are part of the demo character (the SuperVoxelDemo module), not the SuperVoxel API.
+
 
 | Node | What it does |
 |---|---|

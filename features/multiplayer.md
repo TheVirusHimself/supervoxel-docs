@@ -35,11 +35,12 @@ its seed, size and voxel size, so every machine generates the same world, then r
 3. The server sends the changes to every client as batches in an ordered stream. Older batches are folded into later
    ones, so the stream stays compact.
 4. A late joiner gets the world's seed and size, generates the same world, then applies the whole stream.
-   The history is sent to each player in pages, a few per tick, so it can be any size: players join late into worlds
-   with tens of thousands of edits. A rebuild on the server starts a new history.
+   In a bounded world the history is sent to each player in pages, a few per tick, so it can be any size: players
+   join late into worlds with tens of thousands of edits. A rebuild on the server starts a new history.
 
 **Unbounded worlds** ([Unbounded worlds](streaming.md)): each client asks the server for the edits of the chunks it
-loads, and the server sends live edits only for chunks that player has loaded.
+loads, and the server sends live edits only for chunks that player has loaded. Each chunk's edits arrive in one go,
+not in pages (see Limits).
 
 **The net component is added for you:** when a SuperVoxel world is in the level, the server adds one to every player
 controller as players log in.
@@ -78,6 +79,10 @@ moment later, for example on the next tick.
 Play In Editor with several players (one process) works for client edits.
 
 ## Limits
+- **Unbounded worlds with multiplayer:** a chunk's edits are sent to a player in one go (in messages of 1,500
+  changes, with all of the chunk's metadata in the last one), not paged like bounded worlds. Chunks with very large
+  edit or metadata histories (tens of thousands of edits, or thousands of metadata entries, in the chunks one player
+  loads at once) can exceed the engine's message size. Bounded worlds have no such limit.
 - Loading saves is server-only (`Load Edits`, `Load From Slot`, `Reset Edits`).
 - Props from [Surface spawn rules](spawn-rules.md) aren't replicated: every machine places the same ones from the seed.
 - On a client, `Apply Brush` returns 0 because the change arrives from the server a moment later.
