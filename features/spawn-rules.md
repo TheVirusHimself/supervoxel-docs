@@ -75,6 +75,12 @@ Scatter->RegisterComponent();           // it binds to its owner world and place
 | Get Last Update Stats | yes | `void GetLastUpdateStats(int32& ColumnsChecked, int32& ColumnsChanged, float& Milliseconds) const` | The last update's cost |
 | Get Num Instances | yes | `int32 GetNumInstances() const` | Props placed |
 
+## Saves, loads and streaming
+Props come from the voxels plus the seed, so they follow saves, loads and streaming with nothing to save: a dug column
+stays bare after a load, and refilled ground grows the same props again.
+
+Rules, World, Tile Size and Hide Above Cutaway can be changed from code at runtime; the props rebuild.
+
 ## How it updates
 - **Edits update props in place.** After any change (Set Block, Apply Brush, collapse, structures, network edits),
   only the edited columns plus one around them are checked.

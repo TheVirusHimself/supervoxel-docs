@@ -31,6 +31,8 @@ to *Play As Listen Server* with 2 players.
 | F | Fly (Space / Alt for up / down) |
 | Z / X / C | Cutaway down / up / off |
 | F5 / F9 | Save / load |
+| . (period) | Build the feature showcase in front of Bumble |
+| F1 | Open this page in the online guide |
 | Tab | Show or hide help |
 
 **Commands**
@@ -59,6 +61,13 @@ to *Play As Listen Server* with 2 players.
 
 The controls are built in code with Enhanced Input; no input assets are needed.
 
+## The feature showcase
+Press **.** (or call **Stamp Showcase** from Blueprint) to build a small showcase in front of Bumble:
+
+- a sand pile on a plank beam: dig the beam and the sand falls (the block set needs **Falls** on for sand);
+- two [light blocks](features/lights.md);
+- a glow fungus that spreads one block per [scheduled tick](features/ticks.md), eight times.
+
 ## The block palette
 Press **E** to open the palette: every block, grouped by category, with its hardness and kind when you hover over it.
 Click a block to put it in the current hotbar slot; the wheel scrolls, and **E** closes it. The mouse cursor is free
@@ -76,6 +85,10 @@ while it's open.
 - **Digging takes time:** hold the dig button. A block breaks after its **Hardness** × **Dig Seconds Per Hardness**
   (default 0.3 s per point; 0 = instant). Indestructible blocks never break. A crack overlay grows on the block and a
   progress bar shows under the crosshair.
+- **Digging uses block damage** (**Dig With Damage**, on by default): Bumble digs through `Damage Voxel`
+  ([Damage and drops](features/damage-and-drops.md)), so every player sees the crack, and what the block drops (its
+  Drop Item, or the block itself) goes into Bumble's **Bag**, shown under the hotbar. Turn it off for a local timer and
+  `Set Block` instead. Brushes bigger than one voxel always use the timer.
 - **Target highlight:** a thin slab marks the aimed face, and a see-through ghost of the selected block shows where it
   would go. With a brush larger than 1, a ghost of the brush size shows instead.
 - **Help panel (Tab):** shows the live state of collapse, mesh style, ambient occlusion, greedy meshing, props,
@@ -95,6 +108,7 @@ while it's open.
 | Hat Band Color | teal | Hat band colour |
 | Hotbar | (list) | Blocks on the hotbar (1–9) |
 | Brush Size | 1 | Brush radius in voxels (1 = a single voxel) |
+| Dig With Damage | on | Dig through Damage Voxel, with shared cracks and drops into the Bag. Off: a local timer and Set Block |
 | Dig Seconds Per Hardness | 0.3 | Seconds of digging per point of block Hardness while the button is held; 0 = every block breaks at the first swing |
 | Show Target Highlight | on | Show the face under the crosshair and a ghost of the block about to be placed |
 | Brush Shape | Sphere | Shape for digging and placing |
@@ -119,6 +133,8 @@ while it's open.
 | Start Digging | Starts digging what the crosshair is on, as if the dig button were held (local player) |
 | Stop Digging | Lets go of the dig button |
 | Set Palette Open | Opens or closes the block palette (frees the mouse cursor while open) |
+| Stamp Showcase | Builds the feature showcase (Base voxel, Direction) |
+| Set Body Color, Set Leg Color, Set Head Color, Set Hat Color, Set Hat Band Color | Change a look colour at runtime and repaint (Apply Look) |
 
 ## Use Bumble in your own level
 Set Bumble (`ABumbleCharacter`) as the default pawn class in your game mode, or use the demo game mode
