@@ -68,7 +68,7 @@ void AMyNpc::BeginPlay()
 |---|---|---|---|
 | Add Streaming Anchor | yes | `void AddStreamingAnchor(AActor* Anchor)` | Also stream around this actor |
 | Remove Streaming Anchor | yes | `void RemoveStreamingAnchor(AActor* Anchor)` | Stop streaming around it |
-| Is Area Ready | yes | `bool IsAreaReady(FVector Location) const` | The ground around a location is generated and meshed (bounded worlds: the world is built) |
+| Is Area Ready | yes | `bool IsAreaReady(FVector Location) const` | The ground around a location is generated and meshed (bounded worlds: the world is built). A column counts as in range when any part of it is within Load Radius |
 | Is Voxel Loaded | yes | `bool IsVoxelLoaded(FIntVector Voxel) const` | The voxel's data is in memory (always true inside a built bounded world) |
 | Get Num Loaded Chunks | yes | `int32 GetNumLoadedChunks() const` | Chunks in memory |
 

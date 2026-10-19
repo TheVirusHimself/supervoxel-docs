@@ -61,6 +61,17 @@ UnrealEditor-Cmd.exe YourProject.uproject -run=SuperVoxelBuildContent [-Resoluti
 It rebuilds the block table from `Data/SuperVoxelBlocks.csv`, the default block set, its texture arrays, the materials and
 the demo maps.
 
+## Help in the editor
+- **Help > SuperVoxel Documentation** opens this guide.
+- A **Documentation** row at the top of the Details panel opens the matching page for the SuperVoxel World, block
+  sets, the scatter component, structure volumes and templates, the path follower, the net component, and Project
+  Settings > SuperVoxel.
+- The sculpt mode's **Guide** button opens this page.
+- In the Plugins window, SuperVoxel's **Documentation** link opens the guide, and **Support** writes to the support
+  email.
+- From C++: `SuperVoxel::DocsURL` is the guide's address, and `SuperVoxel::DocsPage("features/streaming")` gives a
+  page's address.
+
 ## Troubleshooting
 
 | Problem | Why | Fix |

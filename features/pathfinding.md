@@ -133,7 +133,9 @@ them at a cost; default 8).
 | Target Not Loaded | The goal's chunks aren't loaded (unbounded worlds): the path leads as close as the loaded ground allows |
 | No Path | No way at all: the start isn't standable, or nothing is reachable |
 
-The path follower walks partial paths and searches again when it gets there.
+The path follower walks partial paths and searches again when it gets there. It notices a trench dug anywhere
+across its route and finds a way around; if the trench cuts the way completely, it walks to the edge and stops (On
+Failed, or a partial path).
 
 ## Events
 

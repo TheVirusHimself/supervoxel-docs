@@ -39,8 +39,9 @@ Changing the style re-meshes every chunk, which costs about as much as the first
 
 ## How it looks
 - **Smooth ground:** surface nets. Where up to three smooth block types meet, their textures blend at each vertex.
-  Smooth ground is shaped against blocks too, so there are no cracks where they meet; the ground may rise onto a
-  block's base by part of a voxel.
+  Smooth ground and blocks are each closed solids: smooth ground runs on under a block instead of bending up to it,
+  so there are no cracks where they meet (on slopes, in caves, under overhangs, at chunk borders). Where the ground
+  rounds off next to a block, you see the block's side in a small groove. That's expected.
 - **Hidden faces:** no face is made between two opaque voxels, across chunk borders too, so buried blocks cost no
   triangles.
 - **Blocky blocks:** crisp faces. Buried faces aren't drawn, and with greedy meshing, neighbouring equal faces merge

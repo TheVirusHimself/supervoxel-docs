@@ -53,7 +53,9 @@ void AMyPlayerController::CutawayOff(ASuperVoxelWorld* World)
 | Get Cutaway Height | yes | `int32 GetCutawayHeight() const` |
 
 ## Limits and performance
-- Changing the height rebuilds the display meshes of the chunks at the cut, on worker threads.
+- Changing the height doesn't stall the game: the slice is meshed in the background and appears a few frames later.
+  Until then each chunk keeps its previous look.
+- Cost in the demo: the worst frame after a step is about 30–40 ms.
 - Characters still collide with hidden voxels.
 
 ## Troubleshooting

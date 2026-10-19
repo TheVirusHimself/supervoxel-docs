@@ -74,6 +74,9 @@ moment later, for example on the next tick.
 | (C++ only) | no | `ServerApplyBrush(World, Brush)` / `ServerSetBlock(World, Voxel, Block)` | The server calls behind Apply Brush and Set Block on a client |
 | (C++ only) | no | `USuperVoxelNetComponent::FindLocal(UWorld*)` | The local player's component, on a client |
 
+## Testing in the editor
+Play In Editor with several players (one process) works for client edits.
+
 ## Limits
 - Loading saves is server-only (`Load Edits`, `Load From Slot`, `Reset Edits`).
 - Props from [Surface spawn rules](spawn-rules.md) aren't replicated: every machine places the same ones from the seed.
@@ -84,6 +87,7 @@ moment later, for example on the next tick.
 | Problem | Why | Fix |
 |---|---|---|
 | "ApplyBrush on a client needs a USuperVoxelNetComponent..." | The player controller has no net component | Make sure the world is in the level when players log in; the server adds it then |
+| "client edit request rejected: <reason> (further rejections log at Verbose)" | The server refused a client edit (rate limit, edit distance, no world); the first one is a Warning, later ones Verbose | Check the reason; raise the limit if needed |
 | Edits from far away are ignored | Max Edit Distance | Raise it, or set 0 for no limit |
 | Fast repeated edits drop out | Max Requests Per Second | Raise it, or batch edits into one brush |
 | A client's world looks different | Different block set or generator settings on the client | Ship the same assets; seed, size and voxel size are replicated |

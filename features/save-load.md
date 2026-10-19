@@ -62,11 +62,21 @@ void AMyGameMode::LoadWorld(ASuperVoxelWorld* World)
 | Name | Blueprint | C++ | What it does |
 |---|---|---|---|
 | Save Edits | yes | `TArray<uint8> SaveEdits() const` | The runtime edits as bytes |
-| Load Edits | yes | `bool LoadEdits(const TArray<uint8>& Data)` | Replaces the runtime edits and rebuilds. False if the data doesn't fit this world |
+| Load Edits | yes | `bool LoadEdits(const TArray<uint8>& Data)` | Replaces the runtime edits and updates the world. False if the data doesn't fit this world |
 | Save To Slot | yes | `bool SaveToSlot(const FString& SlotName, int32 UserIndex = 0)` | Seed, size and edits to a slot |
 | Load From Slot | yes | `bool LoadFromSlot(const FString& SlotName, int32 UserIndex = 0)` | Loads a slot written by Save To Slot and rebuilds |
-| Reset Edits | yes | `void ResetEdits()` | Forgets the runtime edits and rebuilds the world as generated (plus baked edits) |
+| Reset Edits | yes | `void ResetEdits()` | Forgets the runtime edits and sets the world back to as generated (plus baked edits) |
 | Get Num Edits | yes | `int32 GetNumEdits() const` | Voxels changed since generation |
+
+## No rebuild on load or reset
+`Load Edits` and `Reset Edits` (same seed and world size) don't rebuild the world. It stays on screen, the voxels
+that differ are set as one batch of edits, and edits made meanwhile are kept. In multiplayer, clients get the change
+like any edit.
+
+- `Get Num Edits` changes at once; the voxels change a moment later, because the generated world is rebuilt on a
+  worker thread first. With **Async Meshing** off, it all happens before the call returns.
+- `Load From Slot` with a different seed or size, `Set Seed And Regenerate`, and unbounded worlds still do a full
+  rebuild.
 
 ## Limits
 - Loading happens on the server (or in a standalone game). In multiplayer the server loads and clients receive the

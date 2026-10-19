@@ -22,6 +22,9 @@ Seller: Onur C Ozdemir. Version: 1.0. Platform: Windows (Win64). **Coming soon t
 
 More in [Troubleshooting and errors](reference/errors.md).
 
+**In the editor:** Help > SuperVoxel Documentation opens this guide, and the Documentation row in the Details panel
+opens the page for what you've selected.
+
 ## Start here
 - [Quick start (5 minutes)](quick-start.md): an editable world in your level.
 - [Recipes](recipes.md): ten copy-ready tasks.

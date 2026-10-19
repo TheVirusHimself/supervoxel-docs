@@ -18,6 +18,7 @@ Output Log and filter by the category. `X`, `N` and `%s` stand for names or numb
 | `<World>: the level's baked edits can't be used (<reason>); they're ignored.` | The editor sculpting saved in the level doesn't fit the world any more | Restore the old settings (e.g. World Size) or sculpt again |
 | `ApplyBrush on a client needs a USuperVoxelNetComponent on the player controller (the server adds one).` | A client edit with no net component | Have the world in the level when players log in |
 | `SetBlock on a client needs a USuperVoxelNetComponent on the player controller (the server adds one).` | Same, for Set Block | Same |
+| `<player>: client edit request rejected: <reason> (further rejections log at Verbose)` | The server refused a client's edit: rate limit, edit distance, or no world | See [Multiplayer](../features/multiplayer.md) |
 | `SetBlock: unknown block 'X'` | No such block in the set | Check the row name (no spaces) |
 | `Unknown block 'X', using Air` | A name in a save or setting isn't in the set | Add the block, or fix the name |
 | `Too many block types; 'X' ignored (limit 4096)` | The block set has more than 4096 types | Remove rows |

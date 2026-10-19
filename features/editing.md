@@ -133,6 +133,10 @@ It's only asked about gameplay edits, not loads, network replays or editor sculp
 |---|---|---|
 | On Voxels Changed | After voxels change (edits, loads, network) | Min, Max: the changed box in voxels (inclusive) |
 
+## Characters on edited ground
+Characters (any `ACharacter`, including AI and walkers) standing on ground that's dug away fall, even while standing
+still. Nothing to set up.
+
 ## Limits and performance
 - Edits are batched: the touched chunks rebuild a frame or two later on worker threads (see
   [Background meshing and collision](background-work.md)).
