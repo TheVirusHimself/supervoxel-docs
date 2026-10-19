@@ -95,6 +95,7 @@ nav_order: 1
 | Place Layline, Emit, Rescan, Get Signal, Is On, Get Role | Laylines subsystem | [Laylines](../features/laylines.md) |
 | Place Structure | World | [Structures](../features/structures.md) |
 | Place Structure At | World | [Structures](../features/structures.md) |
+| Place Surface Wire, Remove Surface Wire, Get Surface Signal | Laylines subsystem | [Laylines](../features/laylines.md#surface-wires) |
 | Random Seed (property) | World | [Generator](../features/generator.md) |
 | Rebuild | World | [Settings](../features/settings.md) |
 | Rebuild All | Scatter | [Spawn rules](../features/spawn-rules.md) |

@@ -12,6 +12,7 @@ nav_order: 26
 
 ## How do I...?
 - **Open a door with a lever:** place a lever, a line of wire and a door; flip the lever with **Interact With Voxel**.
+- **Run a wire along a floor or up a wall without using up blocks:** lay a [surface wire](#surface-wires).
 - **Run my own Blueprint when a circuit fires:** end the circuit in a **Trigger** and bind **On Layline Signal
   Changed**.
 - **See it working:** drop a **Laylines Demo** actor on flat ground.
@@ -96,6 +97,45 @@ light). Notify Settings Changed re-tints every display at once.
 [voxel tint](state-and-metadata.md#voxel-tint). **Set Display Palette** gives one display its own 16 colours (**Get
 Display Palette** reads them back), and the colour saves, replicates and streams with the voxel.
 
+## Surface wires
+Wires can also lie on the faces of ordinary blocks instead of being blocks themselves: on floors, walls and ceilings,
+on blocky faces and on smooth ground.
+
+**Laying them** (server; clients see them through replication):
+
+- **Place Surface Wire** (World, Host, Face, Cable): Host is the solid voxel, Face a unit axis pointing out of it, such
+  as (0, 0, 1) for its top. The cell in front of the face must be open.
+- **Place Surface Wire At Point** (a hit point and normal), **Trace And Place Surface Wire** (a ray, for players
+  aiming), **Remove Surface Wire**.
+
+```cpp
+// A floor wire on top of voxel (10, 4, 19), and a cable up the side of the next one.
+Laylines->PlaceSurfaceWire(World, FIntVector(10, 4, 19), FIntVector(0, 0, 1));
+Laylines->PlaceSurfaceWire(World, FIntVector(11, 4, 20), FIntVector(-1, 0, 0), /*bCable*/ true);
+```
+
+**Shapes:** a surface wire joins the wires next to it and takes its shape from them: end, straight, corner, T or cross.
+It joins along the same face of the next block, round an inner corner (up the wall the floor meets), and over an
+outer edge (onto the block's next face), so a line can climb a step and come down the other side.
+
+**Signal:** surface wires carry signal like wire blocks, with the same fading rules and an override per face (**Set /
+Get Surface Wire Decay**); surface cables don't fade by default. They join wire blocks, and they power (and are powered
+by) every part next to the cell they lie in, including the block they lie on: a lever or lamp standing beside a floor
+wire is connected.
+
+**Saving:** a surface wire is kept in its host block's metadata, so it saves, loads, streams and replicates. Digging the
+host, or filling the cell in front of the wire, takes it away.
+
+**Looks:** a flat pad with an arm toward each wire it joins, drawn in batches on every machine. On smooth ground it
+sits on the drawn surface.
+
+| Call | What it does |
+|---|---|
+| Has Surface Wire, Is Surface Cable | Whether a face has a wire, and whether it's a cable |
+| Get Surface Signal | A surface wire's strength (0 to 15); Get Signal on the open cell gives the strongest wire in it |
+| Get Surface Wire Shape | Its shape (None, Dot, End, Straight, Corner, Tee, Cross) and which of its face's 4 directions it connects to |
+| Set / Get Surface Wire Decay | One surface wire's fading (Default: its type's setting) |
+
 ## Project settings (`ULaylinesSettings`)
 
 | Setting | Default | What it does |
@@ -116,6 +156,10 @@ Display Palette** reads them back), and the colour saves, replicates and streams
 | Default Emitter Value / Mode / Pulse Ticks | 15 / Hold / 4 | New emitters |
 | Output Threshold | 1 | Lowest strength that turns lamps, doors and hatches on |
 | Palette, Display Zero Is Off, Display Emissive, Display Emissive Strength | built-in, on, on, 2 | Display colours |
+| Surface Wire Width, Surface Wire Thickness | 0.18, 0.04 | Surface wire size, as a share of the voxel size |
+| Surface Wire Color / Lit Color, Surface Cable Color / Lit Color | dark teal / bright teal, dark purple / light purple | Surface wire colours, off and lit |
+| Surface Wire Material | the engine's basic material | Any material with a `Color` vector parameter |
+| Surface Redraw Seconds | 0.05 | Batching interval for redrawing surface wires |
 
 Change them at runtime by name with **Set Setting** / **Get Setting** (listed by **Get Setting Names**), or edit **Get
 Laylines Settings** and call **Notify Settings Changed**. Either way **On Laylines Settings Changed** fires and every
@@ -154,9 +198,10 @@ restart by themselves after a load or when a chunk streams in).
   pace instead of freezing the game.
 
 ## The demo
-A **Laylines Demo** actor (`ALaylinesDemo`) on flat ground lays out six small circuits when the world is built and runs
+A **Laylines Demo** actor (`ALaylinesDemo`) on flat ground lays out seven small circuits when the world is built and runs
 them on timers: an AND gate, a clock with a delay chain, a pressure-plate door, a button into a NOT gate, emitter-
-driven display bars (a fading wire next to a non-fading cable), and a button-started timer.
+driven display bars (a fading wire next to a non-fading cable), a button-started timer, and a lever's surface wire
+along the floor, up and over a one-block step to a lamp.
 
 ## Limits
 - Gate facing is horizontal only, and the textures don't show facing.
