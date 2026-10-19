@@ -109,6 +109,7 @@ The full list is the block table, `Data/SuperVoxelBlocks.csv`, in the plugin.
 | Collides | bool | on | Off: characters and physics pass through it (plants, cobwebs, decorations). It's still drawn, still hides what's behind it, and Trace Voxel still hits it; pathfinding walks through it. Blocky blocks only; smooth ground always collides |
 | Behavior | class | none | A [block behaviour](block-behaviors.md) |
 | Random Tick | bool | off | Gets random ticks ([Ticks](ticks.md)) |
+| Tintable | bool | off | Voxels of this block can be coloured one by one ([Voxel tint](state-and-metadata.md#voxel-tint)) |
 | Max Health, Drop Item, Drop Count, Drop Chance, Drop Actor | | 0, None, 1, 1, none | See [Damage and drops](damage-and-drops.md) |
 | Light Intensity, Light Color, Light Radius | | 0, white, 1000 | See [Light blocks](lights.md) |
 

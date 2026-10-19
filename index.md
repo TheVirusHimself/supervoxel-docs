@@ -53,6 +53,7 @@ opens the page for what you've selected.
 | Edit in multiplayer | [Multiplayer](features/multiplayer.md) |
 | Scatter grass, rocks or trees on the ground | [Surface spawn rules](features/spawn-rules.md) |
 | React when voxels change | [Blueprint library and events](features/blueprint-api.md), [Block behaviours](features/block-behaviors.md) |
+| Colour single blocks (signs, pixel walls) | [Voxel tint](features/state-and-metadata.md#voxel-tint) |
 | Make doors, chests and levers | [Block behaviours](features/block-behaviors.md), [Voxel state and metadata](features/state-and-metadata.md) |
 | Mine blocks with hits and drops | [Damage and drops](features/damage-and-drops.md) |
 | Find blocks, the ground, or copy and paste areas | [Queries and regions](features/queries.md) |

@@ -121,6 +121,7 @@ nav_order: 1
 | Set Seed And Regenerate | World | [Generator](../features/generator.md) |
 | Set Setting, Get Setting, Get Setting Names, Get Laylines Settings, Notify Settings Changed | Laylines subsystem | [Laylines](../features/laylines.md) |
 | Set Voxel Meta, Get Voxel Meta, Set Voxel Meta Int, Get Voxel Meta Int | World | [State and metadata](../features/state-and-metadata.md) |
+| Set Voxel Tint, Get Voxel Tint, Clear Voxel Tint | World | [State and metadata](../features/state-and-metadata.md) |
 | Set World Mode, Set World Size, Set Voxel Size, Set Chunk Size | World | [Options from code](../features/options-from-code.md) |
 | Spawn Village | World | [Structures](../features/structures.md) |
 | Start Digging, Stop Digging, Set Palette Open | Bumble | [Example character](../bumble.md) |

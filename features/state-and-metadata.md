@@ -46,6 +46,22 @@ World->SetVoxelMeta(Voxel, TEXT("LastUser"), GetName());
 - **Changing a voxel's block clears its metadata.** Falling blocks, collapse and region pastes carry it along.
 - Works in bounded and unbounded worlds.
 
+## Voxel tint
+Colour single voxels of a block (signs, pixel walls, dyed blocks): tick **Tintable** on the block in the block table,
+then set a tint per voxel.
+
+- The tint multiplies the block's colour and glow, so a white or light texture gives flat colours.
+- It's set on the server, and saved and replicated like metadata (under the key `SV.Tint`). A new block starts
+  untinted.
+- Blocky faces only; 8 bits per channel.
+
+```cpp
+World->SetVoxelTint(Voxel, FLinearColor(0.9f, 0.2f, 0.2f)); // red
+FLinearColor Tint;
+const bool bTinted = World->GetVoxelTint(Voxel, Tint);      // false (and white) if none
+World->ClearVoxelTint(Voxel);
+```
+
 ## Blueprint nodes and C++ functions (on the world)
 
 | Name | C++ | What it does |
@@ -60,6 +76,9 @@ World->SetVoxelMeta(Voxel, TEXT("LastUser"), GetName());
 | Remove Voxel Meta | `bool RemoveVoxelMeta(FIntVector Voxel, FName Key)` | Removes one value |
 | Clear Voxel Meta | `bool ClearVoxelMeta(FIntVector Voxel)` | Removes all of a voxel's metadata |
 | Get Voxel Meta Keys | `TArray<FName> GetVoxelMetaKeys(FIntVector Voxel) const` | The keys a voxel has |
+| Set Voxel Tint | `bool SetVoxelTint(FIntVector Voxel, FLinearColor Tint)` | Colours one voxel of a tintable block |
+| Get Voxel Tint | `bool GetVoxelTint(FIntVector Voxel, FLinearColor& Tint) const` | Its tint (false and white if none) |
+| Clear Voxel Tint | `bool ClearVoxelTint(FIntVector Voxel)` | Removes the tint |
 
 ## Events
 
