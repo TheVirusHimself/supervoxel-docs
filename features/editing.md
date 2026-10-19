@@ -133,6 +133,9 @@ It's only asked about gameplay edits, not loads, network replays or editor sculp
 | On Voxels Changed | After voxels change (edits, loads, network) | Min, Max: the changed box in voxels (inclusive) |
 
 ## Protection volumes
+For which block types can break, and a switch that makes a whole world read-only, see
+[Destruction settings](destruction.md).
+
 Place a **SuperVoxel Protection Volume** (`ASuperVoxelProtectionVolume`) and size its box. Gameplay edits inside it
 are refused: players, brushes, network requests, metadata, damage and falling blocks. Collapse treats it as support
 and never drops a piece into it. Editor sculpting and loads still work.

@@ -62,6 +62,7 @@ opens the page for what you've selected.
 | Change any option while the game runs | [Changing options from code](features/options-from-code.md) |
 | Build circuits: levers, gates, timers, lamps, doors | [Laylines](features/laylines.md) (optional plugin) |
 | Stop players editing an area | [Editing: protection volumes](features/editing.md#protection-volumes) |
+| Choose what can break, or make a world read-only | [Destruction settings](features/destruction.md) |
 | Make it run faster | [Performance](performance.md) |
 | Try the demo character | [Example character: Bumble](bumble.md) |
 | Fix a problem | [Troubleshooting and errors](reference/errors.md), [FAQ](faq.md) |
@@ -96,6 +97,7 @@ Every feature can be turned off. Features you don't use cost nothing.
 | [Ticks](features/ticks.md) |
 | [Light blocks](features/lights.md) |
 | [Changing options from code](features/options-from-code.md) |
+| [Destruction settings](features/destruction.md) |
 | [Laylines: signal wiring (optional plugin)](features/laylines.md) |
 
 ## Reference

@@ -113,6 +113,7 @@ nav_order: 1
 | Set Block With State, Set Block State, Get Block State | World | [State and metadata](../features/state-and-metadata.md) |
 | Set Cast Shadows, Set Collision Profile, Set Affect Navigation | World | [Options from code](../features/options-from-code.md) |
 | Set Cutaway Height | World | [Cutaway](../features/cutaway.md) |
+| Set Destructible, Is Destructible | World | [Destruction settings](../features/destruction.md) |
 | Set Edit Instigator, Get Edit Instigator | World | [Block behaviours](../features/block-behaviors.md) |
 | Set Mesh Style | World | [Meshing](../features/meshing.md) |
 | Set Meshing Options | World | [Meshing](../features/meshing.md) |

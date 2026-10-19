@@ -73,7 +73,7 @@ The full list is the block table, `Data/SuperVoxelBlocks.csv`, in the plugin.
 | Kind | Smooth / Blocky / Fluid | Smooth | How it's meshed |
 | Opacity | Opaque / Masked / Translucent | Opaque | Which material variant draws it |
 | Hardness | float ≥ 0 | 1 | Relative effort to dig. Your game decides what it means; brushes ignore it |
-| Indestructible | bool | false | Never removed by digging, brushes or collapse (the world's floor) |
+| Indestructible | bool | false | Every protection at once: never dug, damaged, collapsed or blasted (the world's floor). For each protection on its own, see [Destruction settings](destruction.md) |
 | Hidden | bool | false | Solid but not drawn: something else renders it |
 | Move Speed | float ≥ 0 | 1 | Walk speed multiplier on top of this block (pathfinding reads it). 0 = can't stand on it |
 | Tags | Gameplay Tags | | Free tags for your game ("Ore", "Flammable"...) |

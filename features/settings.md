@@ -66,6 +66,9 @@ Radius. See [Unbounded worlds](streaming.md).
 
 **Structures:** Structure Rules and Village Rules (both empty).
 
+**Destruction:** Destructible (on; replicated) and the project's Terrain Destructible (on). See
+[Destruction settings](destruction.md).
+
 **Damage:** Health Per Hardness (100), Damage Heal Seconds (10). See [Damage and drops](damage-and-drops.md).
 
 **Ticks:** Random Ticks Per Chunk Per Second (48), Random Tick Radius (6400). See [Ticks](ticks.md).
