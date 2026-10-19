@@ -14,6 +14,7 @@ nav_order: 1
 | Add Fluid, Remove Fluid, Get Fluid Parts, Get Fluid Level | Fluids component | [Fluids](../features/fluids.md) |
 | Add Streaming Anchor | World | [Unbounded worlds](../features/streaming.md) |
 | Apply Brush | World | [Editing](../features/editing.md) |
+| Begin Defer Collapse, End Defer Collapse, Is Collapse Deferred | World | [Collapse](../features/collapse.md) |
 | Capture Structure | World | [Structures](../features/structures.md) |
 | Capture To Asset (button) | Structure Capture actor | [Structures](../features/structures.md) |
 | Cave Culling (property) | World | [Culling](../features/culling.md) |
