@@ -63,4 +63,4 @@ void AMyPlayerController::CutawayOff(ASuperVoxelWorld* World)
 | Problem | Why | Fix |
 |---|---|---|
 | A character walks on something invisible | Collision ignores the cutaway | Expected: it's a view, not an edit |
-| Clicks hit hidden voxels | Your own physics trace sees the full world | Use `Trace Voxel`, which skips what the cutaway hides |
+| Clicks hit hidden voxels, or miss the cut surface | Engine traces (for example Get Hit Result Under Cursor) see the full world, and the cut slice has no collision | Use `Trace Voxel` for cursors while the cutaway is on: it hits what's drawn |

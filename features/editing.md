@@ -144,8 +144,8 @@ and never drops a piece into it. Editor sculpting and loads still work.
 | Is Area Editable (query) | Whether a box is inside the world and not protected ([Queries](queries.md)) |
 
 ## Characters on edited ground
-Characters (any `ACharacter`, including AI and walkers) standing on ground that's dug away fall, even while standing
-still. Nothing to set up.
+Characters (any `ACharacter`, including AI and walkers) standing on ground that's dug away fall. Nothing to set up.
+**Known issue:** a character resting still far from the edge of a dug pit can stay hovering until it moves.
 
 ## Limits and performance
 - Edits are batched: the touched chunks rebuild a frame or two later on worker threads (see
