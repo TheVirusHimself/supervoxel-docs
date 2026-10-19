@@ -12,6 +12,36 @@ SuperVoxel editing API, in single player and multiplayer, so it doubles as a wor
 Open `/SuperVoxel/Demo/Maps/SuperVoxelDemo` (the one demo map) and press Play. For multiplayer, set Play > Net Mode
 to *Play As Listen Server* with 2 players.
 
+## Demo stations
+Around the spawn point, one station per feature: each has something to try and a floating sign with a title, one to
+three lines with the keys to press, and **See:** the guide page to read. The keys on a sign follow your device
+(keyboard or gamepad). Signs face the camera and fade with distance.
+
+The stations: digging, damage and drops, smooth and blocky, structures, cutaway and caves, collapse, lights, ticks and
+falling blocks, walkers, props, [Laylines](features/laylines.md) and [Fluids](features/fluids.md) (each when its plugin
+is enabled), and multiplayer.
+
+- **Hide or show the signs:** F2, or the help menu's station signs row (pad: Menu).
+- **Edit the text:** the rows are in `DT_SuperVoxelDemoStations` (row structure `SuperVoxelDemoStationRow`): Title,
+  Body, Guide Page, Kind (what the station builds), Order, Ring Scale (how far out it sits) and Enabled. In Body, a key
+  in braces such as `{Dig}` or `{Camera}` shows as that key for the device in use.
+- **Leave them out:** untick **Spawn Stations** on the demo game mode (`ASuperVoxelDemoGameMode`), or start with
+  `-SuperVoxelNoStations`. Skip single stations with `-SuperVoxelStationsSkip=Id,Id` (row names). **Stations Class**
+  swaps in your own subclass.
+- **The stations actor** (`ASuperVoxelDemoStations`): Station Table, Ring Radius (2600), Fade Start / Fade End (2200 /
+  3600), Sign Scale (0.9), Show Signs (Set Show Signs, Toggle Signs), Get Station Sites, Get Station Ids.
+
+## Cameras
+Bumble has two cameras: **over the shoulder** (the default) and **first person**. **Y** switches between them (pad:
+right stick click), and the HUD always shows the key beside the hotbar.
+
+- In first person, Bumble is hidden from its own player only; other players still see it, and the target highlight
+  still works.
+- **From code:** Camera Mode (`EBumbleCameraMode`: Over Shoulder, First Person), Set Camera Mode, Toggle Camera Mode,
+  First Person Eye Offset (22, 0, 72).
+- **Rebind the switch:** Set Camera Toggle Keys (Keyboard Key, Gamepad Key; pass an empty key to keep one as it is).
+  Get Camera Toggle Label returns the key's label for the device in use ("Y", "RS click").
+
 ## Controls
 
 | Input | Action |
@@ -22,7 +52,8 @@ to *Play As Listen Server* with 2 players.
 | Left mouse (hold) | Dig: harder blocks take longer |
 | Right mouse | Place |
 | Wheel or 1–9 | Pick a hotbar slot (9 slots) |
-| E | Open or close the block palette |
+| E | Use the block you aim at (a lever, a button) if it does something; otherwise open or close the block palette |
+| Y | Switch camera: over the shoulder or first person |
 | G / H | Cycle the slot through every block |
 | Q | Swap shoulder |
 | Ctrl | Aim |
@@ -35,12 +66,13 @@ to *Play As Listen Server* with 2 players.
 | . (period) | Build the feature showcase in front of Bumble |
 | F1 | Open this page in the online guide |
 | Tab | Show or hide help |
+| F2 | Show or hide the station signs |
 
 **Commands**
 
 | Key | Action |
 |---|---|
-| Y | Build an overhang |
+| ; (semicolon) | Build an overhang |
 | U | Place a cottage |
 | L | Build a village |
 | T | Call the walkers |
@@ -71,11 +103,11 @@ Every action works on a gamepad, and the HUD shows pad labels while a pad is in 
 | A | Jump |
 | B | Fly down |
 | X | Fly |
-| Y | Block palette |
+| Y | Use the block you aim at, otherwise the block palette |
 | RT, LT | Dig, place |
 | LB, RB | Pick a block |
 | Left stick click | Run |
-| Right stick click | Swap shoulder |
+| Right stick click | Switch camera |
 | D-pad up, down | Cutaway down, up |
 | D-pad left, right | Brush size |
 | Menu | Help menu: the d-pad picks a setting, A changes it, B closes |
@@ -93,8 +125,11 @@ Every action works on a gamepad, and the HUD shows pad labels while a pad is in 
 | D-pad left, right | Cutaway off, aim |
 | LT, RT | Save, load |
 | Left stick click | Props on or off |
-| Right stick click | Walker paths on or off |
+| Right stick click | Swap shoulder |
 | Menu | Open the online guide |
+
+Walker paths and the station signs are in the help menu (Menu). Both sticks have a 0.2 dead zone, and the right
+stick looks without inverting.
 
 **In the palette:** the d-pad moves, A fills the current slot, LB / RB pick the slot, LT / RT change tab, B closes.
 
@@ -120,7 +155,7 @@ while it's open. On a pad: the d-pad moves, A fills the slot, LB / RB pick the s
 - **Built from cubes:** no skeletal mesh. Each part is a static mesh cube with its own colour.
 - **Procedural animation** (`UBumbleAnimComponent`): bobbing, a hat that wobbles behind the motion, limbs that swing
   with speed, a jump stretch, a landing squash, and dig and place swings.
-- **Over-the-shoulder camera:** a spring arm (`UBumbleSpringArm`) with a shoulder offset you can swap, and a closer
+- **Over-the-shoulder camera** (and a [first-person one](#cameras)): a spring arm (`UBumbleSpringArm`) with a shoulder offset you can swap, and a closer
   view while aiming. When something blocks the camera it moves in at once, then eases back out (Return Speed, default
   5; 0 snaps back like a plain spring arm). While dig is held, Bumble keeps facing the way the camera looks.
 - **Aiming:** each frame Bumble traces from the camera. A ghost outline shows the voxel a dig will remove, or where a
@@ -175,6 +210,10 @@ while it's open. On a pad: the d-pad moves, A fills the slot, LB / RB pick the s
 |---|---|
 | Start Digging | Starts digging what the crosshair is on, as if the dig button were held (local player) |
 | Stop Digging | Lets go of the dig button |
+| Interact With Target | Uses the block under the crosshair (Interact With Voxel) if its block has a behaviour; returns whether it did something |
+| Set Help Visible | Shows or hides the help panel |
+| Set Camera Mode, Toggle Camera Mode | Over the shoulder or first person |
+| Set Camera Toggle Keys, Get Camera Toggle Label | Rebinds the camera switch; its label as the HUD shows it |
 | Set Palette Open | Opens or closes the block palette (frees the mouse cursor while open) |
 | Stamp Showcase | Builds the feature showcase (Base voxel, Direction) |
 | Set Using Gamepad, Is Using Gamepad | Switches the HUD labels and menus between gamepad and keyboard (Bumble also detects it from input) |

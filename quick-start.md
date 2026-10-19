@@ -16,7 +16,7 @@ By the end you'll have a generated world in your level and you'll dig into it wh
    and watch the preview change.
 4. **Press Play.** The world builds on worker threads and appears a moment later.
 5. **Dig.** Open `/SuperVoxel/Demo/Maps/SuperVoxelDemo` and play as Bumble (left mouse digs, right mouse
-   places). Or add the two nodes below to your own character.
+   places). The signs around the spawn show one feature each; see [Demo stations](bumble.md#demo-stations). Or add the two nodes below to your own character.
 
 
 ## Dig where you look (your own character)

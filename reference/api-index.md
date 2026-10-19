@@ -10,6 +10,8 @@ nav_order: 1
 
 | Name | On | Page |
 |---|---|---|
+| Add Emitter On Face, Add Drain On Face, Set Emitter Active | Fluids component | [Fluids](../features/fluids.md) |
+| Add Fluid, Remove Fluid, Get Fluid Parts, Get Fluid Level | Fluids component | [Fluids](../features/fluids.md) |
 | Add Streaming Anchor | World | [Unbounded worlds](../features/streaming.md) |
 | Apply Brush | World | [Editing](../features/editing.md) |
 | Capture Structure | World | [Structures](../features/structures.md) |
@@ -22,6 +24,7 @@ nav_order: 1
 | Count Blocks In Box, Count Block Types In Box | Query library | [Queries](../features/queries.md) |
 | Damage Voxel, Break Voxel | World | [Damage and drops](../features/damage-and-drops.md) |
 | Draw Voxel Path | Navigation | [Pathfinding](../features/pathfinding.md) |
+| Enable Fluids, Get Fluids | Fluids library | [Fluids](../features/fluids.md) |
 | Fill Block Table, Make Block Set With Laylines | Laylines library | [Laylines](../features/laylines.md) |
 | Find Blocks In Box, Find Blocks In Sphere | Query library | [Queries](../features/queries.md) |
 | Find Nearest Block | Query library | [Queries](../features/queries.md) |
@@ -80,6 +83,7 @@ nav_order: 1
 | On Blocks Changed, On Voxel Interact (events) | World | [Block behaviours](../features/block-behaviors.md) |
 | On Chunk Loaded, On Chunk Unloaded (C++ events) | World | [Unbounded worlds](../features/streaming.md) |
 | On Chunk Meshed (C++ event) | World | [Meshing](../features/meshing.md) |
+| On Fluid Reaction, On Fluid Drained | Fluids component | [Fluids](../features/fluids.md) |
 | On Found, On Failed (events) | Find Voxel Path Async | [Pathfinding](../features/pathfinding.md) |
 | On Layline Signal Changed, On Layline Option Changed, On Laylines Settings Changed (events) | Laylines | [Laylines](../features/laylines.md) |
 | On Partial (event) | Find Voxel Path Async | [Pathfinding](../features/pathfinding.md) |
@@ -115,6 +119,7 @@ nav_order: 1
 | Set Cutaway Height | World | [Cutaway](../features/cutaway.md) |
 | Set Destructible, Is Destructible | World | [Destruction settings](../features/destruction.md) |
 | Set Edit Instigator, Get Edit Instigator | World | [Block behaviours](../features/block-behaviors.md) |
+| Set Fluid Mode, Get Fluid Mode | Fluids component | [Fluids](../features/fluids.md) |
 | Set Fluid Surface, Get Fluid Surface | World | [Meshing](../features/meshing.md) |
 | Set Mesh Style | World | [Meshing](../features/meshing.md) |
 | Set Meshing Options | World | [Meshing](../features/meshing.md) |

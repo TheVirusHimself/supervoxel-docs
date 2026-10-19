@@ -27,4 +27,4 @@ If you've used other voxel or terrain tools, this table maps the ideas you know 
 - **Bounded worlds:** a world is a box with a fixed size. Unbounded, streamed worlds are coming.
 - **One world, two looks:** smooth ground and crisp blocks live in the same chunk, with no second system.
 - **Names, not ids:** saves store block names, so you can add and reorder block types safely.
-- **Static water:** fluid blocks don't flow.
+- **Flowing water is optional:** fluid blocks stay put unless you turn on [Fluids](features/fluids.md).

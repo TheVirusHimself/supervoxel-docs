@@ -61,7 +61,8 @@ Tick or untick Greedy Meshing and Ambient Occlusion on the world. The editor pre
 AO on and off side by side
 
 ## Fluid surfaces
-How a fluid block's surface is drawn, set per fluid block at runtime (for fluid simulations):
+How a fluid block's surface is drawn, set per fluid block at runtime. [Fluids](fluids.md) sets it for you from each
+fluid's mode:
 
 | Style | What it draws |
 |---|---|

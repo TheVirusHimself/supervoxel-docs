@@ -33,7 +33,7 @@ nav_order: 27
 | Can Be Dug | on | Gameplay edits (Set Block, brushes, Break Voxel, pasting) may remove or replace it. Editor sculpting always can |
 | Can Be Damaged | on | [Damage Voxel](damage-and-drops.md) wears it down. Breaking it also needs Can Be Dug |
 | Affected By Collapse | on | Falls or breaks off when unsupported ([collapse](collapse.md), and Falls blocks). Off: it holds itself and what rests on it, and anchors pieces like the floor does |
-| Fluid Can Destroy | off | Flowing fluid washes it away (plants, torches). Read by fluid simulations |
+| Fluid Can Destroy | off | Flowing fluid washes it away (plants, torches); used by [Fluids](fluids.md) |
 | Explosion Proof | off | Blasts don't destroy it. Read by explosion code (yours, or a later version) |
 | Indestructible | off | All of the above protections at once: never dug, damaged, collapsed or blasted |
 

@@ -78,7 +78,7 @@ display's colour) swap between blocks of the same part, and their options go wit
 | Lamp | LaylineLamp, LaylineLampOn | Lit while its strongest neighbour reaches its threshold; gives real light | — |
 | Door, Hatch | LaylineDoor/DoorOpen, LaylineHatch/HatchOpen | Open while powered; the open blocks don't collide | — |
 | Display | LaylineDisplay, LaylineDisplay1..15 | A plain cube in one flat colour from the palette, picked by its signal. A wall of them makes a pixel screen | — |
-| Trigger | LaylineTrigger | Holds its strength and fires **On Layline Signal Changed** when it changes | — |
+| Trigger | LaylineTrigger | Holds its strength and fires **On Layline Signal Changed** when it changes (for example, to switch a [fluid emitter](fluids.md#emitters-and-drains)) | — |
 
 **Facing:** a directional part outputs to its facing side (0 = +X, 1 = +Y, 2 = −X, 3 = −Y). Set it with Place Layline
 or Set Facing. A part a player places faces where the player looks.

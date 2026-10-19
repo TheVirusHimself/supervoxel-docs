@@ -61,6 +61,7 @@ opens the page for what you've selected.
 | Make lamps light the world | [Light blocks](features/lights.md) |
 | Change any option while the game runs | [Changing options from code](features/options-from-code.md) |
 | Build circuits: levers, gates, timers, lamps, doors | [Laylines](features/laylines.md) (optional plugin) |
+| Make water and lava flow, with springs and drains | [Fluids](features/fluids.md) (optional plugin) |
 | Stop players editing an area | [Editing: protection volumes](features/editing.md#protection-volumes) |
 | Choose what can break, or make a world read-only | [Destruction settings](features/destruction.md) |
 | Make it run faster | [Performance](performance.md) |
@@ -99,6 +100,7 @@ Every feature can be turned off. Features you don't use cost nothing.
 | [Changing options from code](features/options-from-code.md) |
 | [Destruction settings](features/destruction.md) |
 | [Laylines: signal wiring (optional plugin)](features/laylines.md) |
+| [Fluids: flowing water and lava (optional plugin)](features/fluids.md) |
 
 ## Reference
 - [Blueprint nodes and C++ functions (A to Z)](reference/api-index.md)

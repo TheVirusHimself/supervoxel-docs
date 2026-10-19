@@ -24,7 +24,8 @@ Read this once; the rest of the manual uses these ideas.
   changes made while playing are runtime edits. A save is the seed plus the runtime edits.
 - **Block names, not numbers.** Each block gets an id when its block set loads (Air is always 0). Ids can change
   between sessions, so saves store names.
-- **Limits in version 1.0:** water doesn't flow, there are no distance detail levels (LOD), and Win64 is the only
+- **Limits in version 1.0:** water flows only with the optional [Fluids](features/fluids.md) plugin, there are no distance
+  detail levels (LOD), and Win64 is the only
   verified platform.
 - **Everything heavy runs in the background:** generation, meshing and collision happen on worker threads.
 

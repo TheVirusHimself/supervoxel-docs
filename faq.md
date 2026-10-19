@@ -7,7 +7,8 @@ nav_order: 10
 **Can it make infinite worlds?** Unbounded worlds (endless in X and Y, streamed around the players) are coming and
 still being tested; see [Unbounded worlds](features/streaming.md). Distance detail levels (LOD) aren't in version 1.
 
-**Does water flow?** Not in version 1.0. Fluid blocks are static.
+**Does water flow?** Yes, with the optional SuperVoxel Fluids plugin: Block mode for classic endless sources, Dynamic
+mode for water that keeps its volume. Without it, fluid blocks stay put. See [Fluids](features/fluids.md).
 
 **Does it support multiplayer?** Yes. The server applies edits and sends them to clients in batches. Players who join
 late get the seed plus the edit journal. See [Multiplayer](features/multiplayer.md).
