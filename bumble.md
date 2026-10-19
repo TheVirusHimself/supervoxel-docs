@@ -31,6 +31,7 @@ to *Play As Listen Server* with 2 players.
 | F | Fly (Space / Alt for up / down) |
 | Z / X / C | Cutaway down / up / off |
 | F5 / F9 | Save / load |
+| = | UI scale: 75 / 100 / 125 / 150% |
 | . (period) | Build the feature showcase in front of Bumble |
 | F1 | Open this page in the online guide |
 | Tab | Show or hide help |
@@ -95,7 +96,7 @@ Every action works on a gamepad, and the HUD shows pad labels while a pad is in 
 | Right stick click | Walker paths on or off |
 | Menu | Open the online guide |
 
-**In the palette:** the d-pad moves, A picks, B closes.
+**In the palette:** the d-pad moves, A fills the current slot, LB / RB pick the slot, LT / RT change tab, B closes.
 
 ## The feature showcase
 Press **.** (or call **Stamp Showcase** from Blueprint) to build a small showcase in front of Bumble:
@@ -105,9 +106,15 @@ Press **.** (or call **Stamp Showcase** from Blueprint) to build a small showcas
 - a glow fungus that spreads one block per [scheduled tick](features/ticks.md), eight times.
 
 ## The block palette
-Press **E** to open the palette: every block, grouped by category, with its hardness and kind when you hover over it.
-Click a block to put it in the current hotbar slot; the wheel scrolls, and **E** closes it. The mouse cursor is free
-while it's open.
+Press **E** (pad: **Y**) to open the palette, a compact panel with:
+
+- **category tabs** (pad: LT / RT; keyboard: Page Up / Page Down);
+- a **search box**: press **/** to type, Enter or Esc to finish;
+- a **recent** row of the blocks you used last;
+- a **grid** of blocks, with each block's name in a tooltip.
+
+Click a block to put it in the current hotbar slot, or drag it onto any slot. **E** closes it; the mouse cursor is free
+while it's open. On a pad: the d-pad moves, A fills the slot, LB / RB pick the slot, B closes.
 
 ## How it works
 - **Built from cubes:** no skeletal mesh. Each part is a static mesh cube with its own colour.
@@ -173,8 +180,15 @@ while it's open.
 | Set Using Gamepad, Is Using Gamepad | Switches the HUD labels and menus between gamepad and keyboard (Bumble also detects it from input) |
 | Set Menu Open, Is Menu Open | Opens or closes the help menu |
 | Move Menu Cursor | Moves the menu highlight (Y), or the palette cursor (X across, Y by rows) |
+| Get Palette Blocks, Get Palette Categories | The blocks and the category tabs the palette shows |
+| Set Palette Tab, Set Palette Search | Picks a tab, or filters by text |
+| Assign Block To Slot | Puts a block in a hotbar slot |
+| Get Recent Blocks | The recent row |
 | Activate Menu Item, Get Menu Cursor | Does what a settings row does (the same as its keyboard key); the highlighted row |
 | Set Body Color, Set Leg Color, Set Head Color, Set Hat Color, Set Hat Band Color | Change a look colour at runtime and repaint (Apply Look) |
+
+**HUD scale:** the demo HUD (`ASuperVoxelDemoHUD`) has **UI Scale** (0.5 to 2; Set UI Scale). The = key or the help
+menu's UI scale row cycles 75, 100, 125 and 150%.
 
 ## Use Bumble in your own level
 Set Bumble (`ABumbleCharacter`) as the default pawn class in your game mode, or use the demo game mode
