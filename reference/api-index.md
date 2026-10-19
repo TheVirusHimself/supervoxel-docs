@@ -22,6 +22,7 @@ nav_order: 1
 | Count Blocks In Box, Count Block Types In Box | Query library | [Queries](../features/queries.md) |
 | Damage Voxel, Break Voxel | World | [Damage and drops](../features/damage-and-drops.md) |
 | Draw Voxel Path | Navigation | [Pathfinding](../features/pathfinding.md) |
+| Fill Block Table, Make Block Set With Laylines | Laylines library | [Laylines](../features/laylines.md) |
 | Find Blocks In Box, Find Blocks In Sphere | Query library | [Queries](../features/queries.md) |
 | Find Nearest Block | Query library | [Queries](../features/queries.md) |
 | Find Spawn Location | World | [Background work](../features/background-work.md) |
@@ -80,12 +81,14 @@ nav_order: 1
 | On Chunk Loaded, On Chunk Unloaded (C++ events) | World | [Unbounded worlds](../features/streaming.md) |
 | On Chunk Meshed (C++ event) | World | [Meshing](../features/meshing.md) |
 | On Found, On Failed (events) | Find Voxel Path Async | [Pathfinding](../features/pathfinding.md) |
+| On Layline Signal Changed, On Layline Option Changed, On Laylines Settings Changed (events) | Laylines | [Laylines](../features/laylines.md) |
 | On Partial (event) | Find Voxel Path Async | [Pathfinding](../features/pathfinding.md) |
 | On Voxel Damaged, On Voxel Broken (events) | World | [Damage and drops](../features/damage-and-drops.md) |
 | On Voxel Meta Changed (event) | World | [State and metadata](../features/state-and-metadata.md) |
 | On Voxel Random Tick, On Voxel Scheduled Tick (events) | World | [Ticks](../features/ticks.md) |
 | On Voxels Changed (event) | World | [Blueprint library](../features/blueprint-api.md) |
 | On World Built (event) | World | [Background work](../features/background-work.md) |
+| Place Layline, Emit, Rescan, Get Signal, Is On, Get Role | Laylines subsystem | [Laylines](../features/laylines.md) |
 | Place Structure | World | [Structures](../features/structures.md) |
 | Place Structure At | World | [Structures](../features/structures.md) |
 | Random Seed (property) | World | [Generator](../features/generator.md) |
@@ -105,6 +108,7 @@ nav_order: 1
 | Set Block | World | [Editing](../features/editing.md) |
 | Set Block Behavior | World | [Block behaviours](../features/block-behaviors.md) |
 | Set Block Material Params | World | [Materials](../features/materials.md) |
+| Set Block Option, Get Block Option, Get Block Option Names (and the per-part Set/Get calls) | Laylines subsystem | [Laylines](../features/laylines.md) |
 | Set Block Set, Set Generator, Set Structure Rules, Set Village Rules | World | [Options from code](../features/options-from-code.md) |
 | Set Block With State, Set Block State, Get Block State | World | [State and metadata](../features/state-and-metadata.md) |
 | Set Cast Shadows, Set Collision Profile, Set Affect Navigation | World | [Options from code](../features/options-from-code.md) |
@@ -115,6 +119,7 @@ nav_order: 1
 | Set Render Distance | World | [Culling](../features/culling.md) |
 | Set Seed | World | [Generator](../features/generator.md) |
 | Set Seed And Regenerate | World | [Generator](../features/generator.md) |
+| Set Setting, Get Setting, Get Setting Names, Get Laylines Settings, Notify Settings Changed | Laylines subsystem | [Laylines](../features/laylines.md) |
 | Set Voxel Meta, Get Voxel Meta, Set Voxel Meta Int, Get Voxel Meta Int | World | [State and metadata](../features/state-and-metadata.md) |
 | Set World Mode, Set World Size, Set Voxel Size, Set Chunk Size | World | [Options from code](../features/options-from-code.md) |
 | Spawn Village | World | [Structures](../features/structures.md) |
