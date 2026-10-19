@@ -22,6 +22,9 @@ nav_order: 2
 | Seed | World | 1 |
 
 ## Project settings (`USuperVoxelSettings`)
+Find them under Project Settings > Plugins > SuperVoxel. Tip: if Project Settings opens filtered ("All results
+have been filtered"), click **All** next to the General chip.
+
 
 | Setting | Default | What it does |
 |---|---|---|

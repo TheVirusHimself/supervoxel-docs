@@ -50,5 +50,5 @@ Output Log and filter by the category. `X`, `N` and `%s` stand for names or numb
 | The world is empty | Check the block set and the generator ([Settings](../features/settings.md)) |
 | The world appears late | It builds on worker threads; wait for On World Built ([Background work](../features/background-work.md)) |
 | Edits don't show for other players | Edits must go through the server; see [Multiplayer](../features/multiplayer.md) |
-| A new block is grey | Press Rebuild Texture Arrays ([Materials](../features/materials.md)) |
+| A new block is grey | Press RebuildTextureArrays ([Materials](../features/materials.md)) |
 | Agents can't find a path | Raise Region Margin or Max Expansions ([Pathfinding](../features/pathfinding.md)) |

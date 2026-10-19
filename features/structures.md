@@ -44,7 +44,7 @@ ST_Cottage, Location = Hit Location, Rotation = 1)
 const FSuperVoxelHit Hit = USuperVoxelLibrary::TraceFromCamera(this, World, 3000.f);
 if (Hit.bHit)
 {
-	World->PlaceStructureAt(CottageTemplate, Hit.Location, /*Rotation*/ 1);
+	World->PlaceStructureAt(CottageTemplate, Hit.Location, /*Rotation*/ 1); // CottageTemplate: a UPROPERTY set to ST_Cottage
 }
 ```
 

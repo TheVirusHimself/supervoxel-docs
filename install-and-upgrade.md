@@ -33,7 +33,7 @@ SuperVoxel is coming soon to Fab. Once it's listed:
 | SuperVoxel | Runtime | The world actor, block sets, generators, meshing, editing, saves, multiplayer, scatter, the Blueprint library | No (the core) |
 | SuperVoxelNavigation | Runtime | Pathfinding: the A* search, the async node, the path-follower component | Yes |
 | SuperVoxelDemo | Runtime | Bumble, the walkers, the demo game modes and HUD, the block gallery | Yes |
-| SuperVoxelEditor | Editor | The sculpt mode, the texture-array builder, the content commandlet, automation tests | Editor only; not in packaged games |
+| SuperVoxelEditor | Editor | The sculpt mode, the texture-array builder, the content commandlet | Editor only; not in packaged games |
 
 ## Use it from C++
 Add the modules you use to your module's `Build.cs`:

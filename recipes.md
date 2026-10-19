@@ -38,10 +38,20 @@ World->ApplyBrush(USuperVoxelLibrary::MakeSphereBrush(ESuperVoxelBrushOp::Paint,
 ```
 
 ## 4. Place a structure
-**Blueprint:** Place Structure At (Template = ST_Cottage, Location, Rotation = 0..3).
+**Blueprint:** Place Structure At (Template = ST_Cottage, Location, Rotation = 0..3). Pick `ST_Cottage` in the
+Template pin (it's in `/SuperVoxel/Structures`).
 ```cpp
-World->PlaceStructureAt(CottageTemplate, Location, /*Rotation*/ 1);
+#include "SuperVoxelStructure.h"
+
+USuperVoxelStructureTemplate* Cottage = LoadObject<USuperVoxelStructureTemplate>(
+	nullptr, TEXT("/SuperVoxel/Structures/ST_Cottage.ST_Cottage"));
+if (Cottage)
+{
+	World->PlaceStructureAt(Cottage, Location, /*Rotation*/ 1);
+}
 ```
+In your own classes, a `UPROPERTY(EditAnywhere) TObjectPtr<USuperVoxelStructureTemplate> Template;` set in the
+editor is better than loading by path.
 See [Structures and villages](features/structures.md).
 
 ## 5. Save on quit, load on start
@@ -49,11 +59,14 @@ See [Structures and villages](features/structures.md).
 ("World1").
 ```cpp
 #include "Kismet/GameplayStatics.h"
+#include "SuperVoxelLibrary.h"
+#include "SuperVoxelWorld.h"
 
 void AMyGameMode::BeginPlay()
 {
 	Super::BeginPlay();
-	if (UGameplayStatics::DoesSaveGameExist(TEXT("World1"), 0))
+	ASuperVoxelWorld* World = USuperVoxelLibrary::FindVoxelWorld(this);
+	if (World && UGameplayStatics::DoesSaveGameExist(TEXT("World1"), 0))
 	{
 		World->LoadFromSlot(TEXT("World1"));
 	}
@@ -61,7 +74,10 @@ void AMyGameMode::BeginPlay()
 
 void AMyGameMode::EndPlay(const EEndPlayReason::Type Reason)
 {
-	World->SaveToSlot(TEXT("World1"));
+	if (ASuperVoxelWorld* World = USuperVoxelLibrary::FindVoxelWorld(this))
+	{
+		World->SaveToSlot(TEXT("World1"));
+	}
 	Super::EndPlay(Reason);
 }
 ```
