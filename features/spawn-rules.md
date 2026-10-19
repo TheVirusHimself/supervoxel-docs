@@ -46,6 +46,7 @@ Scatter->RegisterComponent();           // it binds to its owner world and place
 | Rules | array | empty | One rule per kind of prop |
 | World | voxel world | the owner | The world to scatter on; empty = the owner, if it's a voxel world |
 | Tile Size | int 8..128 | 32 | Columns of this many voxels share one instance component per rule |
+| Update Budget Ms | float ≥ 0 | 2 | Most milliseconds per frame spent updating props, nearest tiles first; 0 = no limit |
 | Hide Above Cutaway | bool | on | Hide props on ground the [cutaway](cutaway.md) slices off; they come back when the cut moves away |
 
 **Rule (`FSuperVoxelScatterRule`)**
@@ -70,7 +71,9 @@ Scatter->RegisterComponent();           // it binds to its owner world and place
 | Name | Blueprint | C++ | What it does |
 |---|---|---|---|
 | Rebuild All | yes | `void RebuildAll()` | Rebuilds every prop. Only needed after changing Rules |
-| Flush Updates | yes | `void FlushUpdates()` | Applies pending edit and cutaway updates now instead of on the next tick |
+| Flush Updates | yes | `void FlushUpdates()` | Applies every pending edit and cutaway update now, ignoring Update Budget Ms |
+| Has Pending Updates | yes | `bool HasPendingUpdates() const` | True while tiles or columns still wait for their props |
+| Mark All Tiles Dirty | yes | `void MarkAllTilesDirty()` | Re-checks every column with ground over the next ticks (after changing a rule in place) |
 | Get Num Instances In Column | yes | `int32 GetNumInstancesInColumn(int32 X, int32 Y) const` | Props standing on one column, over every rule |
 | Get Last Update Stats | yes | `void GetLastUpdateStats(int32& ColumnsChecked, int32& ColumnsChanged, float& Milliseconds) const` | The last update's cost |
 | Get Num Instances | yes | `int32 GetNumInstances() const` | Props placed |
@@ -103,5 +106,6 @@ Rules, World, Tile Size and Hide Above Cutaway can be changed from code at runti
 |---|---|---|
 | Props vanish when the cutaway is on | Hide Above Cutaway | Expected; untick it to keep them |
 | No props appear | Empty rules, no Mesh, or On Blocks names don't match the surface | Check the names against the block set |
-| Props float after a dig | Updates apply on the next tick | Call Flush Updates if you need them at once |
+| Props float after a dig | Updates are spread over frames (Update Budget Ms) | Call Flush Updates if you need them at once |
+| A rule changed in place has no effect | Existing props aren't re-checked | Call Mark All Tiles Dirty, or Rebuild All |
 | Props on steep cliffs | Max Slope is too high | Lower it |

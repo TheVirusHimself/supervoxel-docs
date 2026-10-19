@@ -61,6 +61,42 @@ to *Play As Listen Server* with 2 players.
 
 The controls are built in code with Enhanced Input; no input assets are needed.
 
+## Gamepad
+Every action works on a gamepad, and the HUD shows pad labels while a pad is in use.
+
+| Button | Action |
+|---|---|
+| Left stick, right stick | Move, look |
+| A | Jump |
+| B | Fly down |
+| X | Fly |
+| Y | Block palette |
+| RT, LT | Dig, place |
+| LB, RB | Pick a block |
+| Left stick click | Run |
+| Right stick click | Swap shoulder |
+| D-pad up, down | Cutaway down, up |
+| D-pad left, right | Brush size |
+| Menu | Help menu: the d-pad picks a setting, A changes it, B closes |
+
+**Hold View for tools:**
+
+| Button (with View held) | Action |
+|---|---|
+| A | Feature showcase |
+| B | Call the walkers |
+| X | Brush shape |
+| Y | Place a cottage |
+| LB, RB | Cycle the slot through every block |
+| D-pad up, down | Build a village, build an overhang |
+| D-pad left, right | Cutaway off, aim |
+| LT, RT | Save, load |
+| Left stick click | Props on or off |
+| Right stick click | Walker paths on or off |
+| Menu | Open the online guide |
+
+**In the palette:** the d-pad moves, A picks, B closes.
+
 ## The feature showcase
 Press **.** (or call **Stamp Showcase** from Blueprint) to build a small showcase in front of Bumble:
 
@@ -134,6 +170,10 @@ while it's open.
 | Stop Digging | Lets go of the dig button |
 | Set Palette Open | Opens or closes the block palette (frees the mouse cursor while open) |
 | Stamp Showcase | Builds the feature showcase (Base voxel, Direction) |
+| Set Using Gamepad, Is Using Gamepad | Switches the HUD labels and menus between gamepad and keyboard (Bumble also detects it from input) |
+| Set Menu Open, Is Menu Open | Opens or closes the help menu |
+| Move Menu Cursor | Moves the menu highlight (Y), or the palette cursor (X across, Y by rows) |
+| Activate Menu Item, Get Menu Cursor | Does what a settings row does (the same as its keyboard key); the highlighted row |
 | Set Body Color, Set Leg Color, Set Head Color, Set Hat Color, Set Hat Band Color | Change a look colour at runtime and repaint (Apply Look) |
 
 ## Use Bumble in your own level
