@@ -40,8 +40,10 @@ void AMyPlayerController::CutawayOff(ASuperVoxelWorld* World)
 
 ## How it works
 - Chunks the cut passes through get a second, display-only mesh drawn up to the cut.
-- **Collision and traces still use the full world.** The one exception is the Visibility trace channel, which
-  follows what's shown, so clicks land on what the player sees.
+- **Collision still uses the full world:** characters stand on hidden voxels. The cut slices themselves have no
+  collision.
+- **Trace Voxel skips hidden voxels**, so it hits what's drawn. Its Include Cut Away option (advanced) traces through
+  them too. Use it for cursors, not physics line traces.
 
 ## Blueprint nodes and C++ functions
 
@@ -61,4 +63,4 @@ void AMyPlayerController::CutawayOff(ASuperVoxelWorld* World)
 | Problem | Why | Fix |
 |---|---|---|
 | A character walks on something invisible | Collision ignores the cutaway | Expected: it's a view, not an edit |
-| Clicks pass through to hidden voxels | Your trace uses a channel other than Visibility | Trace on Visibility, or use `Trace Voxel` and compare with the cut height |
+| Clicks hit hidden voxels | Your own physics trace sees the full world | Use `Trace Voxel`, which skips what the cutaway hides |

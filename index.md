@@ -52,7 +52,13 @@ opens the page for what you've selected.
 | Make an endless world (coming) | [Unbounded worlds](features/streaming.md) |
 | Edit in multiplayer | [Multiplayer](features/multiplayer.md) |
 | Scatter grass, rocks or trees on the ground | [Surface spawn rules](features/spawn-rules.md) |
-| React when voxels change | [Blueprint library and events](features/blueprint-api.md) |
+| React when voxels change | [Blueprint library and events](features/blueprint-api.md), [Block behaviours](features/block-behaviors.md) |
+| Make doors, chests and levers | [Block behaviours](features/block-behaviors.md), [Voxel state and metadata](features/state-and-metadata.md) |
+| Mine blocks with hits and drops | [Damage and drops](features/damage-and-drops.md) |
+| Find blocks, the ground, or copy and paste areas | [Queries and regions](features/queries.md) |
+| Make grass spread or timers fire | [Ticks](features/ticks.md) |
+| Make lamps light the world | [Light blocks](features/lights.md) |
+| Stop players editing an area | [Editing: protection volumes](features/editing.md#protection-volumes) |
 | Make it run faster | [Performance](performance.md) |
 | Try the demo character | [Example character: Bumble](bumble.md) |
 | Fix a problem | [Troubleshooting and errors](reference/errors.md), [FAQ](faq.md) |
@@ -80,6 +86,12 @@ Every feature can be turned off. Features you don't use cost nothing.
 | [Surface spawn rules](features/spawn-rules.md) |
 | [Editor tools](features/editor-tools.md) |
 | [Blueprint library and events](features/blueprint-api.md) |
+| [Voxel state and metadata](features/state-and-metadata.md) |
+| [Queries and regions](features/queries.md) |
+| [Block behaviours](features/block-behaviors.md) |
+| [Damage and drops](features/damage-and-drops.md) |
+| [Ticks](features/ticks.md) |
+| [Light blocks](features/lights.md) |
 
 ## Reference
 - [Blueprint nodes and C++ functions (A to Z)](reference/api-index.md)

@@ -18,8 +18,14 @@ nav_order: 1
 | Collapse After Dig (property) | World | [Collapse](../features/collapse.md) |
 | CollapseUnsupported (C++) | World | [Collapse](../features/collapse.md) |
 | ComputeBrush (C++) | World | [Editing](../features/editing.md) |
+| Copy Voxel Region, Paste Voxel Region, Get Turned Region Size | Query library | [Queries](../features/queries.md) |
+| Count Blocks In Box, Count Block Types In Box | Query library | [Queries](../features/queries.md) |
+| Damage Voxel, Break Voxel | World | [Damage and drops](../features/damage-and-drops.md) |
 | Draw Voxel Path | Navigation | [Pathfinding](../features/pathfinding.md) |
+| Find Blocks In Box, Find Blocks In Sphere | Query library | [Queries](../features/queries.md) |
+| Find Nearest Block | Query library | [Queries](../features/queries.md) |
 | Find Spawn Location | World | [Background work](../features/background-work.md) |
+| Find Surface | Query library | [Queries](../features/queries.md) |
 | Find Voxel Path | Navigation | [Pathfinding](../features/pathfinding.md) |
 | Find Voxel Path Async | Navigation (async node) | [Pathfinding](../features/pathfinding.md) |
 | Find Voxel World | Library | [Blueprint library](../features/blueprint-api.md) |
@@ -42,6 +48,7 @@ nav_order: 1
 | Get Num Edits | World | [Save and load](../features/save-load.md) |
 | Get Num Instances | Scatter | [Spawn rules](../features/spawn-rules.md) |
 | Get Num Instances In Column | Scatter | [Spawn rules](../features/spawn-rules.md) |
+| Get Num Light Emitters, Get Num Active Voxel Lights | World | [Light blocks](../features/lights.md) |
 | Get Num Loaded Chunks | World | [Unbounded worlds](../features/streaming.md) |
 | Get Num Merged Faces | World | [Meshing](../features/meshing.md) |
 | Get Num Solid Voxels | Structure template | [Structures](../features/structures.md) |
@@ -50,12 +57,16 @@ nav_order: 1
 | Get Seed | World | [Generator](../features/generator.md) |
 | Get Surface Height | World | [Editing](../features/editing.md) |
 | Get Texture Tiling | World | [Settings](../features/settings.md) |
+| Get Voxel Health Fraction, Get Block Max Health | World | [Damage and drops](../features/damage-and-drops.md) |
 | Get Voxel Size | World | [Settings](../features/settings.md) |
+| Interact With Voxel | World | [Block behaviours](../features/block-behaviors.md) |
+| Is Area Editable | Query library | [Queries](../features/queries.md) |
 | Is Area Ready | World | [Unbounded worlds](../features/streaming.md) |
 | Is Moving | Path follower | [Pathfinding](../features/pathfinding.md) |
 | Is Ready | World | [Background work](../features/background-work.md) |
 | Is Standable At | Navigation | [Pathfinding](../features/pathfinding.md) |
 | Is Voxel Loaded | World | [Unbounded worlds](../features/streaming.md) |
+| Is Voxel Protected | World | [Editing](../features/editing.md) |
 | Is Voxel Solid | World | [Editing](../features/editing.md) |
 | Load Edits | World | [Save and load](../features/save-load.md) |
 | Load From Slot | World | [Save and load](../features/save-load.md) |
@@ -63,10 +74,14 @@ nav_order: 1
 | Make Sphere Brush | Library | [Editing](../features/editing.md) |
 | Move To | Path follower | [Pathfinding](../features/pathfinding.md) |
 | On Arrived, On Failed (events) | Path follower | [Pathfinding](../features/pathfinding.md) |
+| On Blocks Changed, On Voxel Interact (events) | World | [Block behaviours](../features/block-behaviors.md) |
 | On Chunk Loaded, On Chunk Unloaded (C++ events) | World | [Unbounded worlds](../features/streaming.md) |
 | On Chunk Meshed (C++ event) | World | [Meshing](../features/meshing.md) |
 | On Found, On Failed (events) | Find Voxel Path Async | [Pathfinding](../features/pathfinding.md) |
 | On Partial (event) | Find Voxel Path Async | [Pathfinding](../features/pathfinding.md) |
+| On Voxel Damaged, On Voxel Broken (events) | World | [Damage and drops](../features/damage-and-drops.md) |
+| On Voxel Meta Changed (event) | World | [State and metadata](../features/state-and-metadata.md) |
+| On Voxel Random Tick, On Voxel Scheduled Tick (events) | World | [Ticks](../features/ticks.md) |
 | On Voxels Changed (event) | World | [Blueprint library](../features/blueprint-api.md) |
 | On World Built (event) | World | [Background work](../features/background-work.md) |
 | Place Structure | World | [Structures](../features/structures.md) |
@@ -77,16 +92,23 @@ nav_order: 1
 | Rebuild Texture Arrays (button) | Block set | [Materials](../features/materials.md) |
 | Remesh All | World | [Meshing](../features/meshing.md) |
 | Remove Streaming Anchor | World | [Unbounded worlds](../features/streaming.md) |
+| Remove Voxel Meta, Clear Voxel Meta, Get Voxel Meta Keys | World | [State and metadata](../features/state-and-metadata.md) |
 | Reset Edits | World | [Save and load](../features/save-load.md) |
+| Sample Surface | Query library | [Queries](../features/queries.md) |
 | Save Edits | World | [Save and load](../features/save-load.md) |
 | Save To Slot | World | [Save and load](../features/save-load.md) |
+| Schedule Voxel Tick, Cancel Voxel Tick, Set Block Random Tick | World | [Ticks](../features/ticks.md) |
 | Set Block | World | [Editing](../features/editing.md) |
+| Set Block Behavior | World | [Block behaviours](../features/block-behaviors.md) |
 | Set Block Material Params | World | [Materials](../features/materials.md) |
+| Set Block With State, Set Block State, Get Block State | World | [State and metadata](../features/state-and-metadata.md) |
 | Set Cutaway Height | World | [Cutaway](../features/cutaway.md) |
+| Set Edit Instigator, Get Edit Instigator | World | [Block behaviours](../features/block-behaviors.md) |
 | Set Mesh Style | World | [Meshing](../features/meshing.md) |
 | Set Meshing Options | World | [Meshing](../features/meshing.md) |
 | Set Render Distance | World | [Culling](../features/culling.md) |
 | Set Seed And Regenerate | World | [Generator](../features/generator.md) |
+| Set Voxel Meta, Get Voxel Meta, Set Voxel Meta Int, Get Voxel Meta Int | World | [State and metadata](../features/state-and-metadata.md) |
 | Spawn Village | World | [Structures](../features/structures.md) |
 | Start Digging, Stop Digging, Set Palette Open | Bumble | [Example character](../bumble.md) |
 | Stop | Path follower | [Pathfinding](../features/pathfinding.md) |

@@ -59,7 +59,14 @@ nav_order: 2
 **Streaming:** Load Radius, Unload Margin, Max Chunk Generations In Flight, Stream Around Players, Editor Preview
 Radius. See [Unbounded worlds](streaming.md).
 
-**Structures:** Structure Rules and Village Rules (both empty). See [Structures and villages](structures.md).
+**Structures:** Structure Rules and Village Rules (both empty).
+
+**Damage:** Health Per Hardness (100), Damage Heal Seconds (10). See [Damage and drops](damage-and-drops.md).
+
+**Ticks:** Random Ticks Per Chunk Per Second (48), Random Tick Radius (6400). See [Ticks](ticks.md).
+
+**Lights:** Voxel Lights (on), Max Voxel Lights (24), Voxel Light Distance (5000), Voxel Light Shadows (off). See
+[Light blocks](lights.md). See [Structures and villages](structures.md).
 
 **Rendering**
 
@@ -78,7 +85,7 @@ Radius. See [Unbounded worlds](streaming.md).
 | Setting | Default | What it does |
 |---|---|---|
 | Collision Profile | BlockAll | Collision profile of the chunk meshes |
-| Affect Navigation | off | Chunks affect the engine navmesh. Off by default because navmesh rebuilds on every edit are slow; use [Pathfinding](pathfinding.md) |
+| Affect Navigation | off | Chunks affect the engine navmesh. Off by default because navmesh rebuilds on every edit are slow; use [Pathfinding](pathfinding.md), or see its navmesh section |
 
 ## Blueprint nodes and C++ functions
 

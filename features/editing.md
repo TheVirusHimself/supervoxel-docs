@@ -82,8 +82,9 @@ A brush (`FSuperVoxelBrush`) is one area edit.
 | Flatten | Removes solid voxels above the brush center's height and fills empty ones below it. |
 
 ## Traces
-`Trace Voxel (Start, End, Hit Fluids)` finds the first solid voxel along a line, in world space. Liquids are passed
-through unless **Hit Fluids** is on. `Trace From Camera` does the same from a player's camera through the screen
+`Trace Voxel (Start, End, Hit Fluids, Include Cut Away)` finds the first solid voxel along a line, in world space.
+Liquids are passed through unless **Hit Fluids** is on. Voxels hidden by the [cutaway](cutaway.md) are skipped unless
+**Include Cut Away** (advanced) is on, so it hits what's drawn: use it for cursors, not physics. `Trace From Camera` does the same from a player's camera through the screen
 center.
 
 The result is an `FSuperVoxelHit`:
@@ -103,7 +104,7 @@ The result is an `FSuperVoxelHit`:
 |---|---|---|---|
 | Set Block | yes | `ASuperVoxelWorld::SetBlock(FIntVector Voxel, FName Block)` | Sets one voxel. None or "Air" digs it. True if it changed (on a client: if the request was sent). |
 | Apply Brush | yes | `ASuperVoxelWorld::ApplyBrush(const FSuperVoxelBrush&)` | Applies a brush. Returns the number of voxels changed (0 on a client, which asks the server). |
-| Trace Voxel | yes | `ASuperVoxelWorld::TraceVoxel(Start, End, bHitFluids = false)` | First solid voxel along a segment |
+| Trace Voxel | yes | `ASuperVoxelWorld::TraceVoxel(Start, End, bHitFluids = false, bIncludeCutAway = false)` | First solid voxel along a segment |
 | Trace From Camera | yes | `USuperVoxelLibrary::TraceFromCamera(WorldContext, World, Distance = 1500, PlayerIndex = 0)` | A trace through the screen center |
 | Make Sphere Brush | yes | `USuperVoxelLibrary::MakeSphereBrush(Op, Center, Radius = 2, Block = None, Strength = 1)` | A sphere brush |
 | Make Box Brush | yes | `USuperVoxelLibrary::MakeBoxBrush(Op, Center, HalfExtent, Block = None, Strength = 1)` | A box brush |
@@ -130,6 +131,17 @@ It's only asked about gameplay edits, not loads, network replays or editor sculp
 | Event | When it fires | Parameters |
 |---|---|---|
 | On Voxels Changed | After voxels change (edits, loads, network) | Min, Max: the changed box in voxels (inclusive) |
+
+## Protection volumes
+Place a **SuperVoxel Protection Volume** (`ASuperVoxelProtectionVolume`) and size its box. Gameplay edits inside it
+are refused: players, brushes, network requests, metadata, damage and falling blocks. Collapse treats it as support
+and never drops a piece into it. Editor sculpting and loads still work.
+
+| Setting or node | What it does |
+|---|---|
+| Protect (on the volume) | Whether edits inside are refused (default on; can change at runtime) |
+| Is Voxel Protected (on the world) | `bool IsVoxelProtected(FIntVector Voxel) const`: whether a volume protects a voxel |
+| Is Area Editable (query) | Whether a box is inside the world and not protected ([Queries](queries.md)) |
 
 ## Characters on edited ground
 Characters (any `ACharacter`, including AI and walkers) standing on ground that's dug away fall, even while standing

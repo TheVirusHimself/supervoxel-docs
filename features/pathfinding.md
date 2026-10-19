@@ -99,9 +99,24 @@ USuperVoxelFindPathAsync::FindPathAsync(World, Start, Goal, Options,
 | Acceptance Radius | float | 30 | Distance at which a path point counts as reached (world units, horizontal) |
 | Speed Scale | float 0..1 | 1 | Movement input scale (1 = full speed) |
 | Draw Path | bool | false | Draws the current path |
+| Retry When Voxels Change | bool | true | After a failure, try again when voxels near it change (say someone digs a ramp) |
 
 The follower steers its Character owner with movement input, jumps up ledges higher than the character can step, and
 finds a new path when the voxels along the way change.
+
+- When there's no way to the goal from where it stands (trapped in a pit, say), it fires **On Failed** once and stops
+  instead of wandering back and forth on partial paths.
+- A walker stuck for 3 seconds asks for a cell-by-cell path next.
+- Straightened paths keep a little clearance from drops and walls, so walkers don't clip corners.
+
+## Using Unreal's navmesh instead
+To use the engine navmesh instead of (or as well as) voxel pathfinding:
+
+1. turn on the world's **Affect Navigation**;
+2. set Project Settings > Navigation Mesh > Runtime Generation to **Dynamic**.
+
+Edits then rebuild the navmesh tiles they touch. With Affect Navigation on, chunk collision is cooked as soon as a
+chunk is meshed (a little game-thread time per edited chunk), so the navmesh sees the new ground at once.
 
 ## Blueprint nodes and C++ functions
 

@@ -93,6 +93,17 @@ The full list is the block table, `Data/SuperVoxelBlocks.csv`, in the plugin.
 
 **Textures:** Top, Side and Bottom, each with Base Color, Normal and Packed maps. See [Materials](materials.md).
 
+**Gameplay**
+
+| Setting | Type | Default | What it does |
+|---|---|---|---|
+| Falls | bool | off | Drops straight down when nothing holds it up (checked whenever a voxel next to it changes); columns come down together and stop on solid ground. On in the default table for Sand, Red Sand, Black Sand, White Sand and Gravel |
+| Collides | bool | on | Off: characters and physics pass through it (plants, cobwebs, decorations). It's still drawn, still hides what's behind it, and Trace Voxel still hits it; pathfinding walks through it. Blocky blocks only; smooth ground always collides |
+| Behavior | class | none | A [block behaviour](block-behaviors.md) |
+| Random Tick | bool | off | Gets random ticks ([Ticks](ticks.md)) |
+| Max Health, Drop Item, Drop Count, Drop Chance, Drop Actor | | 0, None, 1, 1, none | See [Damage and drops](damage-and-drops.md) |
+| Light Intensity, Light Color, Light Radius | | 0, white, 1000 | See [Light blocks](lights.md) |
+
 ## Block set settings (`USuperVoxelBlockSet`)
 
 | Setting | Default | What it does |

@@ -187,6 +187,27 @@ Weight.
 | Stone Block | Granite | Below the fill |
 | Bedrock Block | BaseRock | The bottom layer |
 
+## Heightmap: all settings
+The **Heightmap** generator (`USuperVoxelHeightmapGenerator`) builds terrain from a texture whose brightness is
+height.
+
+| Setting | Default | What it does |
+|---|---|---|
+| Heightmap | none | The texture |
+| Height Min | 4 | Height of black, in voxels |
+| Height Range | 48 | Voxels from black to white |
+| Fit To World | on | Stretch the image over the world. Off: tile it at Voxels Per Pixel (unbounded worlds always tile) |
+| Voxels Per Pixel | 1 | Scale when tiling |
+| Top Block | GrassTurf | The top layer |
+| Below Block, Below Depth | Loam, 3 | The layer under the top, and its depth |
+| Stone Block | Granite | Below that |
+| Bedrock Block | BaseRock | The bottom layer |
+| Water Level | -1 | Water up to this height (-1 = no water) |
+| Water Block, Shore Block | Water, Sand | The water, and the block at its edges |
+
+**For packaged games the texture must be readable by the CPU:** Compression Settings = Grayscale or HDR, Mip Gen
+Settings = NoMipmaps, Never Stream on. In the editor any texture works. 16-bit images keep slopes smooth.
+
 ## Write your own generator (C++)
 Subclass `USuperVoxelGenerator` and override:
 
@@ -246,5 +267,7 @@ worlds in your own generator, see [Unbounded worlds](streaming.md).
 | "Layered Terrain: only the first 32 of N stone layers are used." | More than 32 layers | Remove some |
 | "Layered Terrain: world AxBxC is too small (8 voxels per axis minimum)." | Tiny world | Make it bigger |
 | "Layered Terrain: no block registry; call Prepare first." / "voxel buffer does not match the world size." | A custom caller skipped Prepare or passed a wrong buffer | Let the world run the generator, or call Prepare first |
+| "Heightmap X: its pixel format can't be read at runtime. ..." | The texture isn't CPU-readable | Set Grayscale or HDR, NoMipmaps, Never Stream on |
+| "Heightmap generator: X couldn't be read; the ground is flat." | The texture couldn't be read | Check the texture and its settings |
 | Same seed, different world on another machine | Different block set or generator settings | Use the same assets everywhere |
 | "SetSeedAndRegenerate: only the server can change the seed." | Called on a client | Call it on the server |

@@ -17,6 +17,10 @@ Output Log and filter by the category. `X`, `N` and `%s` stand for names or numb
 | `ApplyBrush on a client needs a USuperVoxelNetComponent on the player controller (the server adds one).` | A client edit with no net component | Have the world in the level when players log in |
 | `SetBlock on a client needs a USuperVoxelNetComponent on the player controller (the server adds one).` | Same, for Set Block | Same |
 | `<player>: client edit request rejected: <reason> (further rejections log at Verbose)` | The server refused a client's edit: rate limit, edit distance, or no world | See [Multiplayer](../features/multiplayer.md) |
+| `SuperVoxel query: the box is larger than N voxels; only its lower part is read.` | A query over 16 million voxels | Query smaller boxes ([Queries](../features/queries.md)) |
+| `Paste Voxel Region: paste on the server (clients see it through replication).` | Paste called on a client | Paste on the server |
+| `Heightmap X: its pixel format can't be read at runtime. ...` | The heightmap texture isn't CPU-readable | Grayscale or HDR, NoMipmaps, Never Stream on ([Generator](../features/generator.md)) |
+| `Heightmap generator: X couldn't be read; the ground is flat.` | The heightmap couldn't be read | Check the texture |
 | `SetBlock: unknown block 'X'` | No such block in the set | Check the row name (no spaces) |
 | `Unknown block 'X', using Air` | A name in a save or setting isn't in the set | Add the block, or fix the name |
 | `Too many block types; 'X' ignored (limit 4096)` | The block set has more than 4096 types | Remove rows |
