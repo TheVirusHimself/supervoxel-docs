@@ -39,7 +39,7 @@ if (USuperVoxelHeightmapGenerator* Heightmap = Cast<USuperVoxelHeightmapGenerato
 | Option | Setter (C++) | What happens |
 |---|---|---|
 | Seed | `SetSeed` (the same as Set Seed And Regenerate) | Regenerates the world; **runtime edits are dropped** (a new seed is a new world). Server only |
-| World Mode | `SetWorldMode` | Rebuilds, edits kept. Server only; clients follow |
+| World Mode | `SetWorldMode` | Rebuilds, edits kept in place (states and metadata too), also between Bounded and Unbounded. Server only; clients follow |
 | World Size | `SetWorldSize` (8 to 4096 per axis) | Rebuilds, edits kept. Server only |
 | Voxel Size | `SetVoxelSize` | Rebuilds, edits kept. Server only |
 | Chunk Size | `SetChunkSize` (8 to 64) | Rebuilds, edits kept |
