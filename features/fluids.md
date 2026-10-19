@@ -48,7 +48,7 @@ and queries still work.
 | Sources | Still voxels (placed or generated) are endless sources | None; springs and emitters add fluid, drains take it |
 | Levels | One step lower per voxel away from a source, up to Spread Distance | 1 to 16 parts per voxel |
 | Behaviour | Falls first, then runs toward the nearest drop; recedes when nothing feeds it | Falls, spreads and evens out; fills dug holes; optional Pressure (a U-tube levels) and evaporation |
-| Look | Stepped tops; still water is a flat full block | A smooth surface from the levels |
+| Look (Auto) | Stepped: flat tops, one height per voxel | Rounded: one smooth surface with rounded edges |
 
 **Set the mode:**
 
@@ -93,6 +93,7 @@ Fluid in the block table (Salt Water, Swamp Water...). Rows naming blocks the wo
 | Block | | The fluid block this row drives |
 | Use Project Default Mode | on | Use the project's Default Mode instead of Mode |
 | Mode | Block | This fluid's own mode |
+| Look | Auto | How the surface is drawn: Auto (Block draws Stepped, Dynamic draws Rounded), Stepped, Smooth or Rounded |
 | Viscosity | 0.15 / 0.9 | Seconds between flow steps |
 | Flow Rate | 1 / 0.5 | Dynamic: share (0.05 to 1) of a level difference that moves per step |
 | Spread Distance | 7 / 3 | 1 to 15. Block: how far a flow reaches over flat ground. Both: how far it looks for an edge |
@@ -190,6 +191,11 @@ itself) and **Set Drain** (a solid voxel that takes fluid from the voxel above i
 | Simulation Radius | 0 | Fluids farther than this (cm) from every player pause; 0: no limit |
 | Use Fluid Material | on | Draw fluids with the plugin's liquid material (on every machine) |
 | Fluid Material | the plugin's | Your own material for the fluid mesh section |
+| Rounded Blur | 0.35 | Rounded look: how much each voxel's fill mixes with its side neighbours' (rounds free edges; 0 = none) |
+| Rounded Min Thickness | 0.55 | Rounded look: the thinnest a layer is drawn, as a share of a voxel (0.5 to 1), so thin films still show |
+| Rounded Smoothing Seconds | 0.25 | Rounded look: how long the surface takes to follow a change, so flowing water doesn't shimmer |
+| Rounded Remesh Seconds | 0.1 | Rounded look: at most one new mesh per chunk this often |
+| Max Rounded Meshes Per Frame | 4 | Rounded look: most chunk meshes started per frame (built on worker threads) |
 | Emitter Rules | empty | Scatter rules (see above) |
 | Show Emitter Holes, Hole Material | on, the plugin's | The opening decals |
 | Target World | the owner | The world to simulate |
@@ -207,8 +213,8 @@ All on the component (`USuperVoxelFluidComponent`) unless noted.
 | Reading (any machine) | Get Fluid Parts, Get Fluid Level (0 to 1), Get Fluid Name, Is Fluid Still, Get Fluid Surface Height, Get Flow Direction |
 | Data | Set/Get/Remove Fluid Type, Set Fluid Mode, Get Fluid Mode, Set Reactions, Set Washable Blocks, Notify Data Changed, Get Default Fluid Types, Get Default Reactions |
 | Emitters | Add Emitter, Add Emitter On Face, Add Emitter At Point, Trace And Add Emitter, Add Drain On Face, Add Drain At Point, Remove Emitter, Set Emitter Active, Set Drain Active, Get Emitter, Get Emitters, Get Emitter Output |
-| Look | Set Use Fluid Material, Set Fluid Material, Get Fluid Material Instance |
-| Stats | Get Num Active Cells, Get Num Parked Cells, Get Last Frame Ms, Get Last Frame Updates, Get Last Frame Changes, Get Total Parts (bounded worlds), Is Simulating |
+| Look | Set Fluid Look, Get Fluid Look, Set Use Fluid Material, Set Fluid Material, Get Fluid Material Instance, Set Rounded Blur, Set Rounded Min Thickness, Get Surface Meshes |
+| Stats | Get Num Active Cells, Get Num Parked Cells, Get Last Frame Ms, Get Last Frame Breakdown (Housekeeping, Openings, Cells, Apply Edits), Get Last Frame Updates, Get Last Frame Changes, Get Total Parts (bounded worlds), Is Simulating |
 | Events | On Fluid Reaction, On Fluid Drained (server) |
 | Project settings | Get SuperVoxel Fluid Settings (Default Mode) |
 
@@ -218,7 +224,20 @@ On a client, Add Fluid and Add Emitter ask the server.
 - The plugin's liquid material (`M_SuperVoxelFluids_Liquid`) draws ripples on water tops, streaks and foam on falling
   water, and crust with glowing cracks on any fluid whose block gives light. Its parameters: Normal Strength, Waterfall
   Speed, Foam Strength, Lava Glow Strength (through Get Fluid Material Instance).
-- Each mode sets its own [fluid surface](meshing.md#fluid-surfaces): stepped levels for Block, smooth for Dynamic.
+- **The plugin draws every fluid** in its own meshes, and the world draws none (the world's
+  [fluid surface](meshing.md#fluid-surfaces) is set to Hidden). So when only fluid changes, chunk meshes aren't
+  rebuilt. Collision, traces and queries work as before.
+- **Look per fluid type**, set with the row's **Look** or **Set Fluid Look** (the same way on every machine):
+
+  | Look | What it draws |
+  |---|---|
+  | Auto (default) | Stepped in Block mode, Rounded in Dynamic mode |
+  | Stepped | Flat tops, one height per voxel: the classic blocky look |
+  | Smooth | Levels with each top corner averaged with its neighbours |
+  | Rounded | One smooth surface through the fill levels: rounded free edges, beads where it drips, no seams, eased over time |
+
+- **Resting pools are flat.** A Rounded pool's surface sits at its fill level, and only free edges round off, so
+  water lies flat against stone walls with no dome or rim.
 
 ## The demo
 A **SuperVoxel Fluid Demo** actor (`ASuperVoxelFluidDemo`) builds, when play begins: a stone pool, a waterfall from a

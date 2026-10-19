@@ -40,6 +40,9 @@ Changing the style re-meshes every chunk, which costs about as much as the first
   Smooth ground and blocks are each closed solids: smooth ground runs on under a block instead of bending up to it,
   so there are no cracks where they meet (on slopes, in caves, under overhangs, at chunk borders). Where the ground
   rounds off next to a block, you see the block's side in a small groove. That's expected.
+- **Thin features keep their shape:** a lone smooth voxel, a 1-wide pillar or a 1-voxel ledge is drawn at least
+  **Smooth Min Thickness** voxels thick (world setting, default 0.8; Set Smooth Min Thickness) instead of shrinking to a
+  spike or vanishing. 0 gives the plain surface-nets look.
 - **Hidden faces:** no face is made between two opaque voxels, across chunk borders too, so buried blocks cost no
   triangles.
 - **Blocky blocks:** crisp faces. Buried faces aren't drawn, and with greedy meshing, neighbouring equal faces merge
@@ -62,13 +65,14 @@ AO on and off side by side
 
 ## Fluid surfaces
 How a fluid block's surface is drawn, set per fluid block at runtime. [Fluids](fluids.md) sets it for you from each
-fluid's mode:
+fluid's look, and draws the fluids itself (Hidden):
 
 | Style | What it draws |
 |---|---|
 | Flat (default) | A flat surface a little below the voxel top; the voxel's state is ignored |
 | Levels | Each voxel's surface at its own level, read from its state byte: stepped |
 | Smooth Levels | Levels averaged at each corner over the voxels sharing it: a smooth surface |
+| Hidden | Not drawn by the world (a fluid add-on draws it). Edits between air and a hidden fluid don't remesh chunks; collision, traces, queries and events are unchanged |
 
 ```cpp
 World->SetFluidSurface(TEXT("Water"), ESuperVoxelFluidSurface::SmoothLevels);

@@ -82,6 +82,7 @@ Radius. See [Unbounded worlds](streaming.md).
 |---|---|---|
 | Ambient Occlusion | on | Bake ambient occlusion into the mesh |
 | Greedy Meshing | on | Merge equal block faces into larger quads |
+| Smooth Min Thickness | 0.8 | Smooth ground: the thinnest a lone voxel, pillar or ledge is drawn, in voxels (0 to 1; 0 = the plain look) |
 | Texture Tiling | 0 | World units per texture repeat. 0 or less = project default |
 | Cast Shadows | on | Chunk meshes cast shadows |
 | Mesh Style | Project Default | Per Block, Smooth or Blocky ([Meshing](meshing.md)) |

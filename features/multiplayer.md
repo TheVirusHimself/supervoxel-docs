@@ -35,6 +35,8 @@ its seed, size and voxel size, so every machine generates the same world, then r
 3. The server sends the changes to every client as batches in an ordered stream. Older batches are folded into later
    ones, so the stream stays compact.
 4. A late joiner gets the world's seed and size, generates the same world, then applies the whole stream.
+   The history is sent to each player in pages, a few per tick, so it can be any size: players join late into worlds
+   with tens of thousands of edits. A rebuild on the server starts a new history.
 
 **Unbounded worlds** ([Unbounded worlds](streaming.md)): each client asks the server for the edits of the chunks it
 loads, and the server sends live edits only for chunks that player has loaded.

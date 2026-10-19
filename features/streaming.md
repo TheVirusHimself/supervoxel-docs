@@ -1,14 +1,10 @@
 ---
-title: "Unbounded worlds (coming)"
+title: "Unbounded worlds"
 parent: Features
 nav_order: 18
 ---
 # Unbounded worlds (streaming)
 {: .no_toc }
-
-> **Coming:** unbounded worlds are new and still being tested. Settings and behaviour may change before they're
-> released.
-{: .warning }
 
 > An unbounded world is endless in X and Y. Chunks are generated and drawn around the players (and any actors you
 > add as anchors) and dropped again when everyone moves away. Edits are kept even while their chunks are unloaded.

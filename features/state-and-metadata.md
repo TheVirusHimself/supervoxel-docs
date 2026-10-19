@@ -38,7 +38,7 @@ World->SetVoxelMeta(Voxel, TEXT("LastUser"), GetName());
 ## State
 - A number from 0 to 255 kept with the voxel's block.
 - Changing a voxel's block sets its state to what the change gives (0 by default).
-- **Bits 0 to 4 are reserved** for block rotation in a later version (only for blocks that opt in). Use bits 5 to 7
+- **Bits 0 to 4 are reserved** for block rotation (see the [Roadmap](../roadmap.md); only for blocks that opt in). Use bits 5 to 7
   for your game.
 
 ## Metadata

@@ -29,6 +29,7 @@ opens the page for what you've selected.
 - [Quick start (5 minutes)](quick-start.md): an editable world in your level.
 - [Recipes](recipes.md): ten copy-ready tasks.
 - [Coming from another voxel tool](coming-from-other-tools.md)
+- [Roadmap](roadmap.md): ideas for after 1.0, not promises
 - [Install and upgrade](install-and-upgrade.md)
 - [Concepts](concepts.md): voxels, chunks, blocks and how a world is built.
 - [Glossary](glossary.md)
@@ -49,7 +50,7 @@ opens the page for what you've selected.
 | Make unsupported pieces fall | [Collapse](features/collapse.md) |
 | Place houses, ruins or villages | [Structures and villages](features/structures.md) |
 | Stop drawing hidden caves, or limit the draw distance | [Cave culling and render distance](features/culling.md) |
-| Make an endless world (coming) | [Unbounded worlds](features/streaming.md) |
+| Make an endless world | [Unbounded worlds](features/streaming.md) |
 | Edit in multiplayer | [Multiplayer](features/multiplayer.md) |
 | Scatter grass, rocks or trees on the ground | [Surface spawn rules](features/spawn-rules.md) |
 | React when voxels change | [Blueprint library and events](features/blueprint-api.md), [Block behaviours](features/block-behaviors.md) |
@@ -85,7 +86,7 @@ Every feature can be turned off. Features you don't use cost nothing.
 | [Collapse](features/collapse.md) |
 | [Structures and villages](features/structures.md) |
 | [Cave culling and render distance](features/culling.md) |
-| [Unbounded worlds (coming, in testing)](features/streaming.md) |
+| [Unbounded worlds](features/streaming.md) |
 | [Pathfinding](features/pathfinding.md) |
 | [Multiplayer](features/multiplayer.md) |
 | [Surface spawn rules](features/spawn-rules.md) |

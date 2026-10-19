@@ -9,7 +9,7 @@ nav_order: 4
 | | |
 |---|---|
 | Engine | Unreal Engine 5.8 |
-| Platforms | Windows (Win64) is built and tested. Linux and Mac are planned, not supported yet |
+| Platforms | Windows (Win64) is built and tested. Linux and Mac aren't verified yet (see the [Roadmap](roadmap.md)) |
 | Graphics | Shader Model 5 or newer (the materials sample texture arrays). DirectX 11 or 12 at SM5 or SM6 works; verified on DirectX 12. Mobile (ES3.1) is untested |
 | Engine plugins | Procedural Mesh Component, Enhanced Input (both ship with the engine; turned on automatically) |
 | Third-party software | None |

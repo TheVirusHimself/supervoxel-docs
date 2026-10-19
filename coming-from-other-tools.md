@@ -21,10 +21,11 @@ If you've used other voxel or terrain tools, this table maps the ideas you know 
 | Edit history, voxel save, diff | The **edit journal** (seed plus runtime edits) | [Save and load](features/save-load.md) |
 | Section view, x-ray, slice | The **cutaway** view | [Cutaway](features/cutaway.md) |
 | Occlusion culling for caves | **Cave culling** | [Culling](features/culling.md) |
-| Infinite terrain, world streaming | An **unbounded** world (coming) | [Unbounded worlds](features/streaming.md) |
+| Infinite terrain, world streaming | An **unbounded** world | [Unbounded worlds](features/streaming.md) |
 
 ## What works differently
-- **Bounded worlds:** a world is a box with a fixed size. Unbounded, streamed worlds are coming.
+- **Bounded or unbounded:** a world is a box with a fixed size, or [unbounded](features/streaming.md): endless in X
+  and Y and streamed around the players.
 - **One world, two looks:** smooth ground and crisp blocks live in the same chunk, with no second system.
 - **Names, not ids:** saves store block names, so you can add and reorder block types safely.
 - **Flowing water is optional:** fluid blocks stay put unless you turn on [Fluids](features/fluids.md).

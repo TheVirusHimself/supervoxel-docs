@@ -85,6 +85,7 @@ USuperVoxelFindPathAsync::FindPathAsync(World, Start, Goal, Options,
 |---|---|---|---|
 | Agent | Agent shape | see above | The walker |
 | Max Expansions | int (min 100) | 30000 | Search budget: cells looked at before giving up |
+| Scale Expansions By Distance | bool | true | Budget of 100 cells per cell of straight-line distance (at least 2000, never above Max Expansions), so an unreachable goal nearby gives up quickly. Turn it off for mazes, where the path can be many times longer than the distance |
 | Heuristic Weight | float 1..3 | 1.25 | Above 1 trades path quality for speed |
 | Straighten | bool | true | Turning points instead of every cell |
 | Allow Diagonal | bool | true | Diagonal steps (never cutting corners) |
@@ -100,6 +101,7 @@ USuperVoxelFindPathAsync::FindPathAsync(World, Start, Goal, Options,
 | Speed Scale | float 0..1 | 1 | Movement input scale (1 = full speed) |
 | Draw Path | bool | false | Draws the current path |
 | Retry When Voxels Change | bool | true | After a failure, try again when voxels near it change (say someone digs a ramp) |
+| Min Repath Interval | float (min 0) | 0.25 | Voxel changes along the route ask for a new path at most this often (seconds); changes in between share one search. Flowing fluid changes voxels every frame |
 
 The follower steers its Character owner with movement input, jumps up ledges higher than the character can step, and
 finds a new path when the voxels along the way change.
@@ -167,8 +169,12 @@ Failed, or a partial path).
 ## Limits and performance
 - **In gameplay, use Find Voxel Path Async or the path follower**, not the game-thread Find Voxel Path every frame.
   Find Voxel Path is fine for one-off checks.
-- **An unreachable goal costs a full search**, up to Max Expansions, before it reports no path. Check reachability
-  sparingly, or lower Max Expansions for short-range agents.
+- **An unreachable goal costs a full search** before it reports no path. With **Scale Expansions By Distance** (on by
+  default), that search is capped at 100 cells per cell of straight-line distance (at least 2000, never above Max
+  Expansions), so a goal nearby gives up quickly. Turn it off for mazes, where the path is much longer than the
+  distance.
+- **The path follower repaths at most every Min Repath Interval** (0.25 s): voxel changes along the route in between
+  share one search, so flowing fluid or busy digging doesn't flood it with searches.
 - An async search copies only the region around start and goal (plus Region Margin). A path that must detour further
   out isn't found; raise Region Margin.
 - Max Expansions caps the work. Raise it for very long paths.
@@ -177,7 +183,7 @@ Failed, or a partial path).
 
 | Problem | Why | Fix |
 |---|---|---|
-| No path between two clear points | The detour leaves the copied region, or Max Expansions ran out | Raise Region Margin or Max Expansions |
+| No path between two clear points | The detour leaves the copied region, or the search budget ran out | Raise Region Margin or Max Expansions; in mazes turn off Scale Expansions By Distance |
 | Agents won't climb a one-voxel step | Max Step Up is 0 | Set it to 1 or more |
 | Agents walk into walls | Radius is too small for the character | Raise Radius |
 | Agents avoid some ground | That block's Move Speed is low or 0 | Change Move Speed in the block table |

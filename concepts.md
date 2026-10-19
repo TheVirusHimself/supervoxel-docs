@@ -8,8 +8,8 @@ has_children: true
 Read this once; the rest of the manual uses these ideas.
 
 - **The world is a box of voxels.** Each voxel holds one block type, or Air. The world has a fixed size in voxels
-  (default 256 × 256 × 96). Z is up. [Unbounded worlds](features/streaming.md), endless in X and Y and loaded around
-  the players, are coming.
+  (default 256 × 256 × 96). Z is up. [Unbounded worlds](features/streaming.md) are endless in X and Y and loaded around
+  the players.
 - **Voxel size** is how big one voxel is in the level (default 50 cm).
 - **Chunks.** The world is meshed in chunks (default 32 voxels on each edge), so an edit only rebuilds the chunks it
   touches.
