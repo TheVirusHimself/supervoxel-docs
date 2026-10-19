@@ -21,6 +21,8 @@ nav_order: 2
 | Voxel Size | World (0 = project default) / Project | 50 cm |
 | Seed | World | 1 |
 
+Every option here can also be changed while the game runs: see [Changing options from code](options-from-code.md).
+
 ## Project settings (`USuperVoxelSettings`)
 Find them under Project Settings > Plugins > SuperVoxel. Tip: if Project Settings opens filtered ("All results
 have been filtered"), click **All** next to the General chip.

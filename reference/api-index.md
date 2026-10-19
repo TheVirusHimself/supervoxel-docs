@@ -33,6 +33,7 @@ nav_order: 1
 | Get All Block Names | World | [Block set](../features/block-set.md) |
 | Get Block At | World | [Editing](../features/editing.md) |
 | Get Block Def | World | [Block set](../features/block-set.md) |
+| Get Block Definition, Set Block Definition | World | [Options from code](../features/options-from-code.md) |
 | Get Block Id | World | [Block set](../features/block-set.md) |
 | Get Block Id At | World | [Editing](../features/editing.md) |
 | Get Block Name | World | [Block set](../features/block-set.md) |
@@ -55,6 +56,7 @@ nav_order: 1
 | Get Num Vertices | World | [Meshing](../features/meshing.md) |
 | Get Path Points | Path follower | [Pathfinding](../features/pathfinding.md) |
 | Get Seed | World | [Generator](../features/generator.md) |
+| Get SuperVoxel Settings | Library | [Options from code](../features/options-from-code.md) |
 | Get Surface Height | World | [Editing](../features/editing.md) |
 | Get Texture Tiling | World | [Settings](../features/settings.md) |
 | Get Voxel Health Fraction, Get Block Max Health | World | [Damage and drops](../features/damage-and-drops.md) |
@@ -93,22 +95,28 @@ nav_order: 1
 | Remesh All | World | [Meshing](../features/meshing.md) |
 | Remove Streaming Anchor | World | [Unbounded worlds](../features/streaming.md) |
 | Remove Voxel Meta, Clear Voxel Meta, Get Voxel Meta Keys | World | [State and metadata](../features/state-and-metadata.md) |
+| Request Rebuild | World | [Options from code](../features/options-from-code.md) |
 | Reset Edits | World | [Save and load](../features/save-load.md) |
 | Sample Surface | Query library | [Queries](../features/queries.md) |
 | Save Edits | World | [Save and load](../features/save-load.md) |
 | Save To Slot | World | [Save and load](../features/save-load.md) |
 | Schedule Voxel Tick, Cancel Voxel Tick, Set Block Random Tick | World | [Ticks](../features/ticks.md) |
+| Set Ambient Occlusion, Set Greedy Meshing, Set Texture Tiling | World | [Options from code](../features/options-from-code.md) |
 | Set Block | World | [Editing](../features/editing.md) |
 | Set Block Behavior | World | [Block behaviours](../features/block-behaviors.md) |
 | Set Block Material Params | World | [Materials](../features/materials.md) |
+| Set Block Set, Set Generator, Set Structure Rules, Set Village Rules | World | [Options from code](../features/options-from-code.md) |
 | Set Block With State, Set Block State, Get Block State | World | [State and metadata](../features/state-and-metadata.md) |
+| Set Cast Shadows, Set Collision Profile, Set Affect Navigation | World | [Options from code](../features/options-from-code.md) |
 | Set Cutaway Height | World | [Cutaway](../features/cutaway.md) |
 | Set Edit Instigator, Get Edit Instigator | World | [Block behaviours](../features/block-behaviors.md) |
 | Set Mesh Style | World | [Meshing](../features/meshing.md) |
 | Set Meshing Options | World | [Meshing](../features/meshing.md) |
 | Set Render Distance | World | [Culling](../features/culling.md) |
+| Set Seed | World | [Generator](../features/generator.md) |
 | Set Seed And Regenerate | World | [Generator](../features/generator.md) |
 | Set Voxel Meta, Get Voxel Meta, Set Voxel Meta Int, Get Voxel Meta Int | World | [State and metadata](../features/state-and-metadata.md) |
+| Set World Mode, Set World Size, Set Voxel Size, Set Chunk Size | World | [Options from code](../features/options-from-code.md) |
 | Spawn Village | World | [Structures](../features/structures.md) |
 | Start Digging, Stop Digging, Set Palette Open | Bumble | [Example character](../bumble.md) |
 | Stop | Path follower | [Pathfinding](../features/pathfinding.md) |
