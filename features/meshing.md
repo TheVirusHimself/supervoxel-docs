@@ -60,6 +60,21 @@ Changing the style re-meshes every chunk, which costs about as much as the first
 Tick or untick Greedy Meshing and Ambient Occlusion on the world. The editor preview rebuilds.
 AO on and off side by side
 
+## Fluid surfaces
+How a fluid block's surface is drawn, set per fluid block at runtime (for fluid simulations):
+
+| Style | What it draws |
+|---|---|
+| Flat (default) | A flat surface a little below the voxel top; the voxel's state is ignored |
+| Levels | Each voxel's surface at its own level, read from its state byte: stepped |
+| Smooth Levels | Levels averaged at each corner over the voxels sharing it: a smooth surface |
+
+```cpp
+World->SetFluidSurface(TEXT("Water"), ESuperVoxelFluidSurface::SmoothLevels);
+```
+**Set Fluid Surface** and **Get Fluid Surface** work on this machine only (set it the same way on every machine); the
+style is kept across rebuilds.
+
 ## Stats (Blueprint and C++)
 
 | Name | C++ | What it reports |

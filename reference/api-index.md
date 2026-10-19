@@ -115,6 +115,7 @@ nav_order: 1
 | Set Cutaway Height | World | [Cutaway](../features/cutaway.md) |
 | Set Destructible, Is Destructible | World | [Destruction settings](../features/destruction.md) |
 | Set Edit Instigator, Get Edit Instigator | World | [Block behaviours](../features/block-behaviors.md) |
+| Set Fluid Surface, Get Fluid Surface | World | [Meshing](../features/meshing.md) |
 | Set Mesh Style | World | [Meshing](../features/meshing.md) |
 | Set Meshing Options | World | [Meshing](../features/meshing.md) |
 | Set Render Distance | World | [Culling](../features/culling.md) |

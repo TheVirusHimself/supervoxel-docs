@@ -165,7 +165,10 @@ Failed, or a partial path).
 | On Failed | Path Follower | Gave up |
 
 ## Limits and performance
-- **Find Voxel Path** runs on the game thread; use the async node for long searches.
+- **In gameplay, use Find Voxel Path Async or the path follower**, not the game-thread Find Voxel Path every frame.
+  Find Voxel Path is fine for one-off checks.
+- **An unreachable goal costs a full search**, up to Max Expansions, before it reports no path. Check reachability
+  sparingly, or lower Max Expansions for short-range agents.
 - An async search copies only the region around start and goal (plus Region Margin). A path that must detour further
   out isn't found; raise Region Margin.
 - Max Expansions caps the work. Raise it for very long paths.
