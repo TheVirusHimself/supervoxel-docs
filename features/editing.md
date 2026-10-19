@@ -21,6 +21,7 @@ Editing is always available on the world, and nothing runs until you call it. To
 the edit nodes, or refuse edits with `CanEditVoxel`.
 
 ## The 3 settings you'll use most
+
 | Setting | What it does | Default |
 |---|---|---|
 | Brush **Op** | Dig, Fill, Paint, Smooth or Flatten | Dig |
@@ -99,6 +100,7 @@ The result is an `FSuperVoxelHit`:
 | BlockId | Block id of the hit voxel |
 
 ## Blueprint nodes and C++ functions
+
 | Name | Blueprint | C++ | What it does |
 |---|---|---|---|
 | Set Block | yes | `ASuperVoxelWorld::SetBlock(FIntVector Voxel, FName Block)` | Sets one voxel. None or "Air" digs it. True if it changed (on a client: if the request was sent). |
@@ -126,6 +128,7 @@ World->CanEditVoxel = [](const FIntVector& Voxel, FSuperVoxelBlockId OldBlock, F
 It's only asked about gameplay edits, not loads, network replays or editor sculpting.
 
 ## Events
+
 | Event | When it fires | Parameters |
 |---|---|---|
 | On Voxels Changed | After voxels change (edits, loads, network) | Min, Max: the changed box in voxels (inclusive) |
@@ -138,6 +141,7 @@ It's only asked about gameplay edits, not loads, network replays or editor sculp
 - In multiplayer, a client's edit goes to the server first. See [Multiplayer](multiplayer.md).
 
 ## Troubleshooting
+
 | Problem | Why | Fix |
 |---|---|---|
 | "SetBlock: unknown block 'X'" in the log | No block with that name in the world's block set | Check the name (row names have no spaces, e.g. `OakPlanks`) |

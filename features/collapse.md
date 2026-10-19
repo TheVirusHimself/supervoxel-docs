@@ -14,6 +14,7 @@ On the world: **Collapse After Dig** (`bCollapseAfterDig`). It's **off** by defa
 runs after digs.
 
 ## The settings
+
 | Setting | Where | What it does | Default |
 |---|---|---|---|
 | Collapse After Dig | World > SuperVoxel > Editing | After digs, pieces that lost all support fall | Off |
@@ -36,6 +37,7 @@ const int32 Fell = World->CollapseUnsupported(Emptied);           // MaxPieceSiz
 ```
 
 ## Blueprint nodes and C++ functions
+
 | Name | Blueprint | C++ | What it does |
 |---|---|---|---|
 | Collapse After Dig | property | `bool bCollapseAfterDig` | Turns automatic collapse on |
@@ -46,6 +48,7 @@ const int32 Fell = World->CollapseUnsupported(Emptied);           // MaxPieceSiz
 - Indestructible blocks never move.
 
 ## Troubleshooting
+
 | Problem | Why | Fix |
 |---|---|---|
 | Nothing falls | Collapse After Dig is off, or the piece still touches the floor or an indestructible block | Turn it on; check the piece is really cut off |

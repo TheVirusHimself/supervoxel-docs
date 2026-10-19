@@ -22,6 +22,7 @@ nav_order: 16
 - **The editor module** (SuperVoxelEditor) is editor-only and never ships in a packaged game.
 
 ## The 3 settings you'll use most (Sculpt tool)
+
 | Setting | What it does | Default |
 |---|---|---|
 | Operation | Dig, Fill, Paint, Smooth, or Flatten (to the height where the stroke began) | Dig |
@@ -29,6 +30,7 @@ nav_order: 16
 | Block | Block for Fill, Paint and Flatten (a drop-down of the world's blocks) | Granite |
 
 ## Sculpt tool: all settings
+
 | Setting | Default | What it does |
 |---|---|---|
 | Operation | Dig | What a stroke does |
@@ -50,6 +52,7 @@ Every plugin asset is built from code and data, so it can be rebuilt:
 ```
 UnrealEditor-Cmd.exe YourProject.uproject -run=SuperVoxelBuildContent [-Resolution=256] [-NoMaps]
 ```
+
 | Option | What it does |
 |---|---|
 | -Resolution=N | Texture-array slice size |
@@ -59,6 +62,7 @@ It rebuilds the block table from `Data/SuperVoxelBlocks.csv`, the default block 
 the demo maps.
 
 ## Troubleshooting
+
 | Problem | Why | Fix |
 |---|---|---|
 | The world doesn't show in the editor | Preview In Editor is off, or no block set | Turn it on; set a block set |

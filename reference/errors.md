@@ -11,6 +11,7 @@ SuperVoxel writes to the log category **LogSuperVoxel** (content building uses *
 Output Log and filter by the category. `X`, `N` and `%s` stand for names or numbers filled in at runtime.
 
 ## Messages
+
 | Message | What it means | Fix |
 |---|---|---|
 | `<World>: no block set (and no default block set in Project Settings > SuperVoxel); the world will be empty.` | No block set anywhere | Set Block Set on the world, or the project default |
@@ -40,6 +41,7 @@ Output Log and filter by the category. `X`, `N` and `%s` stand for names or numb
 | `Structure capture: couldn't save X.` | Bad or read-only asset path | Use a path like `/Game/Structures/ST_MyHouse` |
 
 ## Common problems
+
 | Problem | Fix |
 |---|---|
 | The world is empty | Check the block set and the generator ([Settings](../features/settings.md)) |

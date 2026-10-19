@@ -5,6 +5,7 @@ Pages Jekyll site with the just-the-docs theme). There is one source; nothing el
 session owns it, and nobody else edits it. Send API facts and corrections to the guide's owner instead.
 
 **Rules**
+
 - Thorough but simple: cover every feature, setting, Blueprint node, C++ entry point, event and error, in plain
   language and short sentences.
 - Task first: lead with "How do I...?", then the reference.
@@ -15,6 +16,7 @@ session owns it, and nobody else edits it. Send API facts and corrections to the
 - The seller is Onur C Ozdemir.
 
 **Site layout**
+
 - Every page starts with front matter: `title`, `nav_order`, and `parent` for pages under Features or Reference.
 - Navigation order: Home, Quick start, Install and upgrade, Concepts, Features, Example character, Reference,
   Performance, FAQ, Support, Changelog.
@@ -32,6 +34,7 @@ matter or writer files. Check that `Config/FilterPlugin.ini` ships `Docs/`.
 **Publishing:** see `PUBLISH.md`. It needs the user's OK.
 
 **Backlog (from the docs analysis, `Docs/Research/DocsAnalysis.md`)**
+
 - Real screenshots with alt text, at one size and theme (needs the editor).
 - Blueprint graphs as images plus UE's copy-paste node text in a code block (needs the editor).
 - An API reference generated from the headers, one page per class, with a packaging check that fails when a

@@ -16,6 +16,7 @@ Add a **Super Voxel Scatter** component (`USuperVoxelScatterComponent`) to the v
 Remove the component, or leave **Rules** empty, and nothing runs.
 
 ## The 3 settings you'll use most
+
 | Setting | What it does | Default |
 |---|---|---|
 | Mesh | The static mesh to scatter | none |
@@ -67,6 +68,7 @@ Scatter->RegisterComponent();           // it binds to its owner world and place
 | Cast Shadows | bool | true | Instances cast shadows |
 
 ## Blueprint nodes and C++ functions
+
 | Name | Blueprint | C++ | What it does |
 |---|---|---|---|
 | Rebuild All | yes | `void RebuildAll()` | Rebuilds every prop. Only needed after changing Rules |
@@ -92,6 +94,7 @@ Scatter->RegisterComponent();           // it binds to its owner world and place
 - Collision is off by default; turn it on only for props players should bump into.
 
 ## Troubleshooting
+
 | Problem | Why | Fix |
 |---|---|---|
 | Props vanish when the cutaway is on | Hide Above Cutaway | Expected; untick it to keep them |

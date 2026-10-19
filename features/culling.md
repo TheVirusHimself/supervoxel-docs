@@ -12,6 +12,7 @@ nav_order: 11
 > affected by either.
 
 ## Turn it on or off
+
 | Setting (world > Rendering) | What it does | Default |
 |---|---|---|
 | Cave Culling | Hide chunks the camera can't see into | on |
@@ -20,6 +21,7 @@ nav_order: 11
 Frustum culling (not drawing what's behind the camera) is the engine's, and it's always on.
 
 ## The settings
+
 | Setting | What it does | Default |
 |---|---|---|
 | Cave Culling | Turns cave culling on or off | on |
@@ -44,6 +46,7 @@ chunk, it flood-fills through those openings; chunks it can't reach are hidden.
 - In the editor viewport.
 
 ## Blueprint nodes and C++ functions
+
 | Name | Blueprint | C++ | What it does |
 |---|---|---|---|
 | Cave Culling | property | `bool bCaveCulling` | On or off |
@@ -56,6 +59,7 @@ chunk, it flood-fills through those openings; chunks it can't reach are hidden.
 - Chunks are coarse, so some hidden chunks may still be drawn.
 
 ## Troubleshooting
+
 | Problem | Why | Fix |
 |---|---|---|
 | Chunks pop in when a cave opens | They become visible once the camera can see in | Expected |

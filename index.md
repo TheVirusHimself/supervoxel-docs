@@ -11,6 +11,7 @@ world, with data-driven block types, brushes, saves, multiplayer edits and pathf
 Seller: Onur C Ozdemir. Version: 1.0. Platform: Windows (Win64). **Coming soon to Fab.**
 
 ## First aid
+
 | Problem | Quick fix |
 |---|---|
 | The world doesn't show | Check the world's Block Set and Generator, and that the build finished ([Settings](features/settings.md)) |
@@ -30,6 +31,7 @@ More in [Troubleshooting and errors](reference/errors.md).
 - [Glossary](glossary.md)
 
 ## How do I...?
+
 | I want to... | Go to |
 |---|---|
 | Put a world in my level | [Quick start](quick-start.md) |
@@ -55,26 +57,26 @@ More in [Troubleshooting and errors](reference/errors.md).
 ## Features
 Every feature can be turned off. Features you don't use cost nothing.
 
-| Feature | Page |
-|---|---|
-| Block set and block types | [features/block-set.md](features/block-set.md) |
-| Settings (voxel size, textures, tiling) | [features/settings.md](features/settings.md) |
-| Terrain generator | [features/generator.md](features/generator.md) |
-| Meshing: smooth, blocky, mesh style, greedy, ambient occlusion | [features/meshing.md](features/meshing.md) |
-| Materials and textures | [features/materials.md](features/materials.md) |
-| Editing (brushes, traces) | [features/editing.md](features/editing.md) |
-| Background meshing and collision | [features/background-work.md](features/background-work.md) |
-| Save and load | [features/save-load.md](features/save-load.md) |
-| Cutaway view | [features/cutaway.md](features/cutaway.md) |
-| Collapse | [features/collapse.md](features/collapse.md) |
-| Structures and villages | [features/structures.md](features/structures.md) |
-| Cave culling and render distance | [features/culling.md](features/culling.md) |
-| Unbounded worlds (coming, in testing) | [features/streaming.md](features/streaming.md) |
-| Pathfinding | [features/pathfinding.md](features/pathfinding.md) |
-| Multiplayer | [features/multiplayer.md](features/multiplayer.md) |
-| Surface spawn rules | [features/spawn-rules.md](features/spawn-rules.md) |
-| Editor tools | [features/editor-tools.md](features/editor-tools.md) |
-| Blueprint library and events | [features/blueprint-api.md](features/blueprint-api.md) |
+| Feature |
+|---|
+| [Block set and block types](features/block-set.md) |
+| [Settings (voxel size, textures, tiling)](features/settings.md) |
+| [Terrain generator](features/generator.md) |
+| [Meshing: smooth, blocky, mesh style, greedy, ambient occlusion](features/meshing.md) |
+| [Materials and textures](features/materials.md) |
+| [Editing (brushes, traces)](features/editing.md) |
+| [Background meshing and collision](features/background-work.md) |
+| [Save and load](features/save-load.md) |
+| [Cutaway view](features/cutaway.md) |
+| [Collapse](features/collapse.md) |
+| [Structures and villages](features/structures.md) |
+| [Cave culling and render distance](features/culling.md) |
+| [Unbounded worlds (coming, in testing)](features/streaming.md) |
+| [Pathfinding](features/pathfinding.md) |
+| [Multiplayer](features/multiplayer.md) |
+| [Surface spawn rules](features/spawn-rules.md) |
+| [Editor tools](features/editor-tools.md) |
+| [Blueprint library and events](features/blueprint-api.md) |
 
 ## Reference
 - [Blueprint nodes and C++ functions (A to Z)](reference/api-index.md)

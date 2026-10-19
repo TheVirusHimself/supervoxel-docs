@@ -21,6 +21,7 @@ runs. The world's chunks don't affect the engine navmesh by default (`bAffectNav
 a navmesh on every edit is slow.
 
 ## The 3 settings you'll use most
+
 | Setting | What it does | Default |
 |---|---|---|
 | Agent **Radius** | Voxels on each side of the center column the body covers (0 = one voxel wide, 1 = three wide) | 0 |
@@ -105,6 +106,7 @@ The follower steers its Character owner with movement input, jumps up ledges hig
 finds a new path when the voxels along the way change.
 
 ## Blueprint nodes and C++ functions
+
 | Name | Blueprint | C++ | What it does |
 |---|---|---|---|
 | Find Voxel Path | yes | `USuperVoxelPathfindingLibrary::FindVoxelPath(World, Start, Goal, Options, OutPoints, Result)` | Game-thread search; world-space points at feet height, and the result (below) |
@@ -123,6 +125,7 @@ finds a new path when the voxels along the way change.
 them at a cost; default 8).
 
 ## Path results (`ESuperVoxelPathResult`)
+
 | Result | Meaning |
 |---|---|
 | Found | A full path to the goal |
@@ -133,6 +136,7 @@ them at a cost; default 8).
 The path follower walks partial paths and searches again when it gets there.
 
 ## Events
+
 | Event | On | When it fires |
 |---|---|---|
 | On Found | Find Voxel Path Async | A path was found (Points) |
@@ -148,6 +152,7 @@ The path follower walks partial paths and searches again when it gets there.
 - Max Expansions caps the work. Raise it for very long paths.
 
 ## Troubleshooting
+
 | Problem | Why | Fix |
 |---|---|---|
 | No path between two clear points | The detour leaves the copied region, or Max Expansions ran out | Raise Region Margin or Max Expansions |

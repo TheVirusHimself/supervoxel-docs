@@ -21,6 +21,7 @@ nav_order: 3
 **Generator** is a setting on the world. Leave it empty and the world is all air (useful if you fill it yourself).
 
 ## The 3 settings you'll use most
+
 | Setting | Where | What it does | Default |
 |---|---|---|---|
 | Seed | World | Picks the layout. The same seed, size, block set and generator settings make the same world on every machine | 1 |
@@ -45,6 +46,7 @@ World->Rebuild();
 ```
 
 ## The seed
+
 | Setting or node | What it does |
 |---|---|
 | Seed | The layout. Default 1 |
@@ -60,6 +62,7 @@ World->SetSeedAndRegenerate(98765);
 
 ## Meters, voxels and fractions
 Layered Terrain mixes three units, as each setting's tooltip says:
+
 - **meters** for sizes you'd measure (hill height, tunnel width, tree height), so the look holds when you change the
   voxel size;
 - **fractions of world height** for levels (ground level, water level, altitudes);
@@ -176,6 +179,7 @@ or Cone); trunk height 3.5–5.5 m; crown radius 1.75–2.75 m; Trunk Width 0.5 
 Weight.
 
 ## Flat: all settings
+
 | Setting | Default | What it does |
 |---|---|---|
 | Ground Height | 16 | Height of the ground in voxels |
@@ -187,6 +191,7 @@ Weight.
 
 ## Write your own generator (C++)
 Subclass `USuperVoxelGenerator` and override:
+
 - `Prepare(const FSuperVoxelBlockRegistry& Blocks)`: runs on the game thread first. Turn block names into ids here, not
   per voxel.
 - `Generate(const FSuperVoxelGenerationContext& Context) const`: fills `Context.Voxels` (all Air on entry). It may run on
@@ -235,6 +240,7 @@ worlds in your own generator, see [Unbounded worlds](streaming.md).
 - Layered Terrain needs at least 8 voxels per axis.
 
 ## Troubleshooting
+
 | Message | Why | Fix |
 |---|---|---|
 | "Layered Terrain: block set has no X; those features are skipped." | A block the settings name isn't in the set | Add the block or change the setting |

@@ -16,6 +16,7 @@ nav_order: 2
 - **Make the world bigger:** the world's **World Size** (in voxels).
 
 ## The 3 settings you'll use most
+
 | Setting | Where | Default |
 |---|---|---|
 | World Size | World | 256 × 256 × 96 voxels |
@@ -23,6 +24,7 @@ nav_order: 2
 | Seed | World | 1 |
 
 ## Project settings (`USuperVoxelSettings`)
+
 | Setting | Default | What it does |
 |---|---|---|
 | Default Voxel Size | 50 | Voxel edge in cm for worlds that don't set their own |
@@ -81,6 +83,7 @@ Radius. See [Unbounded worlds](streaming.md).
 | Affect Navigation | off | Chunks affect the engine navmesh. Off by default because navmesh rebuilds on every edit are slow; use [Pathfinding](pathfinding.md) |
 
 ## Blueprint nodes and C++ functions
+
 | Name | Blueprint | C++ | What it does |
 |---|---|---|---|
 | Get Voxel Size | yes | `float GetVoxelSize() const` | The effective voxel size (the world's, or the project default) |
@@ -92,6 +95,7 @@ Radius. See [Unbounded worlds](streaming.md).
 - Memory grows with World Size: 2 bytes per voxel for the grid, plus the meshes.
 
 ## Troubleshooting
+
 | Problem | Why | Fix |
 |---|---|---|
 | A setting seems to do nothing | It's 0 on the world, so the project default is used | Set a value above 0 on the world, or change the project setting |

@@ -12,6 +12,7 @@ nav_order: 9
 - **Edits:** only the touched chunks rebuild, in the background (see [Background work](features/background-work.md)).
 
 ## Settings that matter
+
 | Setting | Effect |
 |---|---|
 | World Size | Memory and build time grow with it |

@@ -23,6 +23,7 @@ Every world needs a block set. If a world's **Block Set** is empty it uses the p
 Plugins > SuperVoxel > Default Block Set). If neither is set, the world is empty and the log says so.
 
 ## The 3 settings you'll use most
+
 | Setting | What it does | Default |
 |---|---|---|
 | Kind | Smooth (natural ground), Blocky (crisp cubes) or Fluid (liquid) | Smooth |
@@ -95,6 +96,7 @@ The full list is the block table, `Data/SuperVoxelBlocks.csv`, in the plugin.
 **Textures:** Top, Side and Bottom, each with Base Color, Normal and Packed maps. See [Materials](materials.md).
 
 ## Block set settings (`USuperVoxelBlockSet`)
+
 | Setting | Default | What it does |
 |---|---|---|
 | Tables | | Block tables (row structure SuperVoxelBlockDef). Later rows with the same name override earlier ones |
@@ -104,6 +106,7 @@ The full list is the block table, `Data/SuperVoxelBlocks.csv`, in the plugin.
 | Rebuild Texture Arrays | button | Rebuilds the arrays from the block textures, the source folder and placeholders (editor only) |
 
 ## Blueprint nodes and C++ functions
+
 | Name | Blueprint | C++ (on `ASuperVoxelWorld`) | What it does |
 |---|---|---|---|
 | Get Block Id | yes | `GetBlockId(FName Block)` | Name to id |
@@ -116,6 +119,7 @@ The full list is the block table, `Data/SuperVoxelBlocks.csv`, in the plugin.
 - **Ids can change** when the set changes, so store names. Saves already do.
 
 ## Troubleshooting
+
 | Problem | Why | Fix |
 |---|---|---|
 | "no block set (and no default block set in Project Settings > SuperVoxel); the world will be empty." | Neither the world nor the project names a block set | Set one on the world, or restore the project default |

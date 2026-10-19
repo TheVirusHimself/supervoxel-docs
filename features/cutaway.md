@@ -14,6 +14,7 @@ nav_order: 9
 - **Off:** `Set Cutaway Height (-1)`. Off is the default, and it costs nothing while off.
 
 ## The settings
+
 | Node | What it does | Default |
 |---|---|---|
 | Set Cutaway Height | Hides everything above voxel height Z; -1 = off | -1 (off) |
@@ -45,6 +46,7 @@ void AMyPlayerController::CutawayOff(ASuperVoxelWorld* World)
   follows what's shown, so clicks land on what the player sees.
 
 ## Blueprint nodes and C++ functions
+
 | Name | Blueprint | C++ |
 |---|---|---|
 | Set Cutaway Height | yes | `void SetCutawayHeight(int32 Z)` |
@@ -55,6 +57,7 @@ void AMyPlayerController::CutawayOff(ASuperVoxelWorld* World)
 - Characters still collide with hidden voxels.
 
 ## Troubleshooting
+
 | Problem | Why | Fix |
 |---|---|---|
 | A character walks on something invisible | Collision ignores the cutaway | Expected: it's a view, not an edit |

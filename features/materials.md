@@ -25,6 +25,7 @@ The materials always draw the world. The parts you choose are which textures eac
 folder, or generated placeholders) and which material each variant uses.
 
 ## The 3 settings you'll use most
+
 | Setting | Where | Default |
 |---|---|---|
 | Texture Resolution | Block set | 256 px per slice |
@@ -33,6 +34,7 @@ folder, or generated placeholders) and which material each variant uses.
 
 ## Where a block face's texture comes from
 When you press **Rebuild Texture Arrays**, each block face uses the first of these that exists:
+
 1. the textures set in the block's table row (Top, Side, Bottom);
 2. an image in the block set's **Source Texture Folder**, named `<Block>_<Top|Side|Bottom>_<BaseColor|Normal|Packed>.png`
    (Side alone covers every face; missing Normal and Packed maps are derived from Base Color);
@@ -69,6 +71,7 @@ The change applies to every world using this block set **on this machine**. It i
 multiplayer call it on every machine.
 
 ## Materials
+
 | Asset | Used for |
 |---|---|
 | `/SuperVoxel/Materials/M_SuperVoxel_Opaque` | Opaque blocks |
@@ -79,6 +82,7 @@ multiplayer call it on every machine.
 A block set's own material fields override these; empty fields fall back to the project defaults.
 
 ## Blueprint nodes and C++ functions
+
 | Name | Blueprint | C++ | What it does |
 |---|---|---|---|
 | Set Block Material Params | yes | `ASuperVoxelWorld::SetBlockMaterialParams(Block, Tint, Roughness, Metallic, EmissiveColor, EmissiveStrength, TilingScale)` | Changes how a block is drawn at runtime |
@@ -91,6 +95,7 @@ A block set's own material fields override these; empty fields fall back to the 
 - The placeholder textures are made by the plugin's own code; no external or AI art.
 
 ## Troubleshooting
+
 | Problem | Why | Fix |
 |---|---|---|
 | My texture doesn't show | Arrays not rebuilt, or a wrong file name in the source folder | Rebuild Texture Arrays; check `<Block>_<Face>_<Map>.png` |

@@ -8,6 +8,7 @@ Status: planned
 Every feature is optional. How to switch it off, and what then stops running.
 
 ## The 3 settings you'll use most
+
 | Setting | What it does | Default |
 |---|---|---|
 
@@ -20,19 +21,23 @@ Every feature is optional. How to switch it off, and what then stops running.
 ```
 
 ## All settings
+
 | Setting | Where | Type | Default | What it does |
 |---|---|---|---|---|
 
 ## Blueprint nodes and C++ functions
+
 | Name | Blueprint | C++ | What it does |
 |---|---|---|---|
 
 ## Events
+
 | Event | When it fires | Parameters |
 |---|---|---|
 
 ## Limits and performance
 
 ## Troubleshooting
+
 | Problem | Why | Fix |
 |---|---|---|

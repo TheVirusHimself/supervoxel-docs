@@ -20,6 +20,7 @@ nav_order: 8
 Nothing is saved unless you call a save node. Edits made in the editor are always saved with the level.
 
 ## The 3 nodes you'll use most
+
 | Node | What it does |
 |---|---|
 | Save To Slot | Saves seed, size and edits to a save-game slot |
@@ -57,6 +58,7 @@ void AMyGameMode::LoadWorld(ASuperVoxelWorld* World)
   - *runtime edits*: made while playing. These are what Save Edits and Save To Slot store.
 
 ## Blueprint nodes and C++ functions
+
 | Name | Blueprint | C++ | What it does |
 |---|---|---|---|
 | Save Edits | yes | `TArray<uint8> SaveEdits() const` | The runtime edits as bytes |
@@ -77,6 +79,7 @@ void AMyGameMode::LoadWorld(ASuperVoxelWorld* World)
 - Load Edits, Load From Slot and Reset Edits keep the seed they load or already have, even with Random Seed on.
 
 ## Troubleshooting
+
 | Message or problem | Why | Fix |
 |---|---|---|
 | "LoadEdits: only the server can load edits." | Called on a client | Load on the server |

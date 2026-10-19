@@ -11,6 +11,7 @@ nav_order: 17
 > [A to Z reference](../reference/api-index.md); this page covers the helpers and events.
 
 ## Helper nodes (`USuperVoxelLibrary`)
+
 | Node | C++ | What it does |
 |---|---|---|
 | Find Voxel World | `FindVoxelWorld(WorldContextObject)` | The first voxel world in the level (or none) |
@@ -19,6 +20,7 @@ nav_order: 17
 | Trace From Camera | `TraceFromCamera(WorldContextObject, World, Distance = 1500, PlayerIndex = 0)` | Traces from a player's camera through the screen center |
 
 ## Converting between world and voxels (on the world)
+
 | Node | C++ | What it does |
 |---|---|---|
 | World To Voxel | `WorldToVoxel(FVector WorldLocation)` | The voxel at a world location |
@@ -26,6 +28,7 @@ nav_order: 17
 | Get Voxel Size | `GetVoxelSize()` | Voxel edge in world units |
 
 ## Events (on the world)
+
 | Event | When it fires | Parameters |
 |---|---|---|
 | On World Built | Once the world is generated and every chunk is shown | none |
@@ -48,6 +51,7 @@ void AMyActor::HandleVoxelsChanged(FIntVector Min, FIntVector Max)
 ```
 
 ## Other events
+
 | Event | On | Page |
 |---|---|---|
 | On Found, On Failed | Find Voxel Path Async | [Pathfinding](pathfinding.md) |

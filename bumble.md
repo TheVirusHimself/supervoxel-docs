@@ -15,6 +15,7 @@ Open `/SuperVoxel/Demo/Maps/SuperVoxelDemo` (the one demo map) and press Play. F
 to *Play As Listen Server* with 2 players.
 
 ## Controls
+
 | Input | Action |
 |---|---|
 | WASD, mouse | Move, look |
@@ -86,6 +87,7 @@ while it's open.
   the server like any other edit.
 
 ## Settings (`ABumbleCharacter`)
+
 | Setting | Default | What it does |
 |---|---|---|
 | Body Color | mustard | Body colour |
@@ -113,6 +115,7 @@ while it's open.
 | Swing Hit Time | 0.45 | Share of the swing (0..1) at which the tool hits: when the edit happens |
 
 ## Blueprint nodes on Bumble
+
 | Node | What it does |
 |---|---|
 | Start Digging | Starts digging what the crosshair is on, as if the dig button were held (local player) |
@@ -128,12 +131,14 @@ Bumble lives in the **SuperVoxelDemo** module. Your game doesn't need it.
 
 ## Make your own character from it
 Copy these three ideas:
+
 1. **Aim:** `Trace From Camera` (or `Trace Voxel`) every frame; keep the hit.
 2. **Show the target:** draw a box at `Voxel To World (Hit.Voxel)` for digging, or at `Hit.Adjacent` for placing.
 3. **Edit:** `Apply Brush` with a Dig brush at the hit, or `Set Block (Hit.Adjacent, Block)`.
 See [Editing](features/editing.md) for the full example.
 
 ## Troubleshooting
+
 | Problem | Why | Fix |
 |---|---|---|
 | "Bumble needs Enhanced Input (Project Settings > Input > Default Input Component Class = EnhancedInputComponent)." | Your project uses the old input component | Set Default Input Component Class to EnhancedInputComponent |

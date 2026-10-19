@@ -23,6 +23,7 @@ It's on whenever the world is in a networked game. In a standalone game nothing 
 its seed, size and voxel size, so every machine generates the same world, then replays the edits.
 
 ## The 3 settings you'll use most
+
 | Setting | Where | What it does | Default |
 |---|---|---|---|
 | Max Edit Distance | Super Voxel Net Component | Farthest a player's pawn may be from an edit, in world units (0 = no limit). Checked on the server | 0 |
@@ -65,6 +66,7 @@ The component may be added after your `PostLogin` runs. If `FindComponentByClass
 moment later, for example on the next tick.
 
 ## Blueprint nodes and C++ functions
+
 | Name | Blueprint | C++ | What it does |
 |---|---|---|---|
 | Max Edit Distance | property | `float MaxEditDistance` | Distance limit (server) |
@@ -78,6 +80,7 @@ moment later, for example on the next tick.
 - On a client, `Apply Brush` returns 0 because the change arrives from the server a moment later.
 
 ## Troubleshooting
+
 | Problem | Why | Fix |
 |---|---|---|
 | "ApplyBrush on a client needs a USuperVoxelNetComponent..." | The player controller has no net component | Make sure the world is in the level when players log in; the server adds it then |

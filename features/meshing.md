@@ -12,6 +12,7 @@ nav_order: 4
 > occlusion is baked into the mesh.
 
 ## Turn it on or off
+
 | Part | Setting (world > Rendering) | Default |
 |---|---|---|
 | Greedy meshing | Greedy Meshing | on |
@@ -19,6 +20,7 @@ nav_order: 4
 | Shadows | Cast Shadows | on |
 
 ## Mesh style: per block, all smooth or all cubes
+
 | Style | What it does |
 |---|---|
 | Per Block | Each block's own **Kind** (Smooth or Blocky) in the block table: smooth ground and crisp blocks side by side |
@@ -47,6 +49,7 @@ Changing the style re-meshes every chunk, which costs about as much as the first
 - **Ambient occlusion:** creases, corners and caves are darker. It works with Lumen.
 
 ## Change it at runtime
+
 | Node | C++ | What it does |
 |---|---|---|
 | Set Mesh Style | `SetMeshStyle(ESuperVoxelMeshStyle)` | Changes the style and re-meshes |
@@ -59,6 +62,7 @@ Tick or untick Greedy Meshing and Ambient Occlusion on the world. The editor pre
 AO on and off side by side
 
 ## Stats (Blueprint and C++)
+
 | Name | C++ | What it reports |
 |---|---|---|
 | Get Num Chunks With Mesh | `GetNumChunksWithMesh()` | Chunks that have a mesh |
@@ -68,6 +72,7 @@ AO on and off side by side
 | Get Num Merged Faces | `GetNumMergedFaces()` | Visible faces merged away by greedy meshing |
 
 ## Events
+
 | Event | When it fires |
 |---|---|
 | On Chunk Meshed (C++ only) | A chunk got a new mesh (parameter: the chunk coordinate) |
@@ -78,6 +83,7 @@ AO on and off side by side
 - Runtime voxel meshes don't use Nanite.
 
 ## Troubleshooting
+
 | Problem | Why | Fix |
 |---|---|---|
 | A block I wanted as a cube is rounded | Its Kind is Smooth, or Mesh Style is Smooth | Set Kind = Blocky, or Mesh Style = Per Block or Blocky |

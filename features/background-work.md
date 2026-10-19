@@ -11,6 +11,7 @@ nav_order: 7
 > handed to the renderer a few per frame, so building and digging don't hitch.
 
 ## Turn it on or off
+
 | Setting (world > Building) | What it does | Default |
 |---|---|---|
 | Async Meshing | Build meshes for edits on worker threads (a frame or two later). Off = rebuild on the game thread at once | on |
@@ -47,6 +48,7 @@ void AMyGameMode::BeginPlay()
 ```
 
 ## Blueprint nodes and C++ functions
+
 | Name | Blueprint | C++ | What it does |
 |---|---|---|---|
 | Is Ready | yes | `bool IsReady() const` | Generated and every chunk shown |
@@ -56,6 +58,7 @@ void AMyGameMode::BeginPlay()
 | Get Last Mesh Ms | yes | `float GetLastMeshMs() const` | Milliseconds the last full meshing pass took (worker time) |
 
 ## Events
+
 | Event | When it fires |
 |---|---|
 | On World Built | Once the world is generated and every chunk is shown |
@@ -65,6 +68,7 @@ void AMyGameMode::BeginPlay()
 - A rebuild while a build is running waits for it to finish first.
 
 ## Troubleshooting
+
 | Problem | Why | Fix |
 |---|---|---|
 | The world appears a moment after Play | It builds on worker threads | Expected; show a loading screen with Get Build Progress |

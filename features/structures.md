@@ -23,6 +23,7 @@ Off unless you use it. With the world's **Structure Rules** and **Village Rules*
 added at generation. The placement nodes do nothing until you call them.
 
 ## The 3 settings you'll use most
+
 | Setting | What it does | Default |
 |---|---|---|
 | Rotation | Quarter turns around the vertical axis (0-3) | 0 |
@@ -121,6 +122,7 @@ it with the capture actor in the editor.
 | Salt | 7 | Mixed into the seed |
 
 ## Blueprint nodes and C++ functions (on the world)
+
 | Name | Blueprint | C++ | What it does |
 |---|---|---|---|
 | Place Structure | yes | `int32 PlaceStructure(const FSuperVoxelStructurePlacement&)` | Stamps a template. Returns voxels changed (0 on a client, which asks the server) |
@@ -136,6 +138,7 @@ it with the capture actor in the editor.
 - On a client, Place Structure and Spawn Village ask the server and return 0; the change arrives a moment later.
 
 ## Troubleshooting
+
 | Message or problem | Why | Fix |
 |---|---|---|
 | "Structure capture: no built SuperVoxel world in this level." | No world, or it isn't built | Turn on Preview In Editor and let the world build |

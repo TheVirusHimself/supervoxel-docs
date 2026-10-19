@@ -25,6 +25,7 @@ nav_order: 18
 none of the streaming work runs.
 
 ## The 3 settings you'll use most
+
 | Setting | What it does | Default |
 |---|---|---|
 | World Mode | Bounded or Unbounded | Bounded |
@@ -51,6 +52,7 @@ void AMyNpc::BeginPlay()
 ```
 
 ## All settings (world > Streaming)
+
 | Setting | Default | What it does |
 |---|---|---|
 | World Mode | Bounded | Bounded (a box) or Unbounded (endless in X and Y; World Size Z is the height) |
@@ -61,6 +63,7 @@ void AMyNpc::BeginPlay()
 | Editor Preview Radius | 4800 | In the editor viewport: preview radius around the world actor |
 
 ## Blueprint nodes and C++ functions (on the world)
+
 | Name | Blueprint | C++ | What it does |
 |---|---|---|---|
 | Add Streaming Anchor | yes | `void AddStreamingAnchor(AActor* Anchor)` | Also stream around this actor |
@@ -70,6 +73,7 @@ void AMyNpc::BeginPlay()
 | Get Num Loaded Chunks | yes | `int32 GetNumLoadedChunks() const` | Chunks in memory |
 
 ## Events (C++ only)
+
 | Event | When it fires |
 |---|---|
 | `OnChunkLoaded` | A chunk was generated (or regenerated) and its edits applied (parameter: the chunk coordinate) |
@@ -90,6 +94,7 @@ void AMyNpc::BeginPlay()
 
 ## Write a generator for unbounded worlds (C++)
 Override two more functions on your `USuperVoxelGenerator`:
+
 - `SupportsChunkGeneration()`: return true.
 - `GenerateChunk(const FSuperVoxelChunkGenerationContext& Context) const`: fill one chunk. It may run on any thread,
   many chunks at once. Chunks must join seamlessly, so a voxel's block may depend only on its world position, the
@@ -106,6 +111,7 @@ Z·Size.X·Size.Y, chunk-local, all Air on entry).
 - Cave culling and render distance work as in bounded worlds ([Culling](culling.md)).
 
 ## Troubleshooting
+
 | Problem | Why | Fix |
 |---|---|---|
 | A custom generator gives an empty unbounded world | It doesn't implement chunk generation | Add `SupportsChunkGeneration` and `GenerateChunk`, or use Flat or Layered Terrain |

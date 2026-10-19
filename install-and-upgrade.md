@@ -7,6 +7,7 @@ nav_order: 4
 <!-- Status: draft (module facts checked against 0f6bdf3; Fab install steps added once the listing exists) -->
 
 ## Requirements
+
 | | |
 |---|---|
 | Engine | Unreal Engine 5.8 |
@@ -18,6 +19,7 @@ nav_order: 4
 
 ## Install from Fab
 SuperVoxel is coming soon to Fab. Once it's listed:
+
 1. In the Epic Games Launcher, open your Fab library, find SuperVoxel and choose **Install to Engine** (5.8).
 2. Open your project and tick SuperVoxel in Edit > Plugins, then restart the editor.
 
@@ -27,6 +29,7 @@ SuperVoxel is coming soon to Fab. Once it's listed:
 3. Check Edit > Plugins: SuperVoxel is enabled.
 
 ## The modules
+
 | Module | Type | What it holds | Can I leave it out? |
 |---|---|---|---|
 | SuperVoxel | Runtime | The world actor, block sets, generators, meshing, editing, saves, multiplayer, scatter, the Blueprint library | No (the core) |
