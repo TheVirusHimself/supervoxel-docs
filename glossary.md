@@ -5,8 +5,6 @@ nav_order: 4
 ---
 # Glossary
 
-<!-- Status: draft (terms are added as features land) -->
-
 | Term | Meaning |
 |---|---|
 | Air | The empty block. Every block set has it; it is never drawn. |

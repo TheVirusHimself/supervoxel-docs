@@ -4,8 +4,6 @@ nav_order: 9
 ---
 # Performance
 
-<!-- Status: draft (settings checked against 0f6bdf3; measured numbers come from the stress map) -->
-
 ## What costs what
 - **Memory:** 2 bytes per voxel for the grid (a 256 × 256 × 96 world is about 12 MB), plus the meshes.
 - **Building:** generation and meshing run on worker threads. Read `Get Last Generate Ms` and `Get Last Mesh Ms`.

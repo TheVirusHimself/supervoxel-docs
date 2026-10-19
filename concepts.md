@@ -5,8 +5,6 @@ has_children: true
 ---
 # Concepts
 
-<!-- Status: checked against 0f6bdf3 (headers) -->
-
 Read this once; the rest of the manual uses these ideas.
 
 - **The world is a box of voxels.** Each voxel holds one block type, or Air. The world has a fixed size in voxels

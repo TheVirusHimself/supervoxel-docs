@@ -4,8 +4,6 @@ nav_order: 4
 ---
 # Install and upgrade
 
-<!-- Status: draft (module facts checked against 0f6bdf3; Fab install steps added once the listing exists) -->
-
 ## Requirements
 
 | | |

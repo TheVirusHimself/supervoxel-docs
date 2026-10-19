@@ -5,8 +5,6 @@ nav_order: 13
 ---
 # Pathfinding
 
-<!-- Status: checked against cdfe2a2 (headers; partial paths not yet run) -->
-
 > Finds walkable paths across the voxel world for agents of any size. It reads the voxels directly, so paths follow
 > digs and builds with no navmesh rebuild.
 

@@ -5,8 +5,6 @@ nav_order: 1
 ---
 # Coming from another voxel tool
 
-<!-- Status: draft -->
-
 If you've used other voxel or terrain tools, this table maps the ideas you know to this guide's terms.
 
 | You may know it as | Here it's called | Where to read |

@@ -5,8 +5,6 @@ nav_order: 1
 ---
 # Blueprint nodes and C++ functions (A to Z)
 
-<!-- Status: checked against cdfe2a2 (headers) -->
-
 **On** says where the node lives: the world (`ASuperVoxelWorld`), the library (`USuperVoxelLibrary`), navigation
 (`USuperVoxelPathfindingLibrary`), the path follower, the scatter component or the block set.
 

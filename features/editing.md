@@ -5,8 +5,6 @@ nav_order: 6
 ---
 # Editing
 
-<!-- Status: checked against 0f6bdf3 (headers) -->
-
 > Change the world while playing: set one voxel, or dig, fill, paint, smooth and flatten many at once with a brush.
 > Traces tell you which voxel is under the cursor.
 

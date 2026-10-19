@@ -5,8 +5,6 @@ nav_order: 11
 ---
 # Cave culling and render distance
 
-<!-- Status: checked against e7f2c56 (headers; not yet run in the editor) -->
-
 > Cave culling skips drawing chunks the camera can't see into through open space, such as sealed caves behind rock
 > or the underground below a closed surface. Render distance skips chunks beyond a set distance. Collision isn't
 > affected by either.

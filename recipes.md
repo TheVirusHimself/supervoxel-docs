@@ -4,8 +4,6 @@ nav_order: 3
 ---
 # Recipes
 
-<!-- Status: checked against e7f2c56 (headers; not compiled) -->
-
 Copy-ready answers to common tasks. Each recipe gives the Blueprint nodes in order and the same thing in C++.
 The C++ snippets assume `World` is your `ASuperVoxelWorld*` (from **Find Voxel World**) and that your module depends
 on `"SuperVoxel"`.

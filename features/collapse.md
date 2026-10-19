@@ -5,8 +5,6 @@ nav_order: 10
 ---
 # Collapse
 
-<!-- Status: checked against 0f6bdf3 (headers) -->
-
 > When a dig leaves a piece with no support, it falls straight down until it lands.
 
 ## Turn it on or off

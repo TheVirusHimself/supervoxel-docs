@@ -5,8 +5,6 @@ nav_order: 8
 ---
 # Save and load
 
-<!-- Status: checked against 0f6bdf3 (headers) -->
-
 > A world is its seed plus the list of changes made to it (the edit journal). Saving stores only the changes, so saves
 > stay small. Loading rebuilds the world from the seed and replays them.
 

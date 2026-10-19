@@ -5,8 +5,6 @@ nav_order: 4
 ---
 # Meshing: smooth, blocky, greedy and ambient occlusion
 
-<!-- Status: checked against e7f2c56 (headers; mesh style not yet run in the editor) -->
-
 > Each chunk becomes one mesh. Smooth blocks become rounded natural ground, Blocky blocks become crisp cubes, and both
 > sit in the same chunk with no seam. Equal block faces are merged into larger quads (greedy meshing), and ambient
 > occlusion is baked into the mesh.

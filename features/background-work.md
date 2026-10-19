@@ -5,8 +5,6 @@ nav_order: 7
 ---
 # Background meshing and collision
 
-<!-- Status: checked against 0f6bdf3 (headers) -->
-
 > The world is generated and meshed on worker threads, edits are meshed in the background, and chunk meshes are
 > handed to the renderer a few per frame, so building and digging don't hitch.
 

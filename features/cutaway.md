@@ -5,8 +5,6 @@ nav_order: 9
 ---
 # Cutaway view
 
-<!-- Status: checked against 0f6bdf3 (headers) -->
-
 > Hide everything above a chosen height to look inside caves, mines and buildings. It only changes what's drawn.
 
 ## Turn it on or off

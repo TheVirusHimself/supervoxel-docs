@@ -5,8 +5,6 @@ nav_order: 1
 ---
 # Block set and block types
 
-<!-- Status: checked against 0f6bdf3 (headers and `Data/SuperVoxelBlocks.csv`) -->
-
 > A block set is a data asset that lists the block types a world can use. The block types live in tables, one row per
 > block. Add a row to add a block, with no code.
 

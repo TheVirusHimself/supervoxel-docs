@@ -4,8 +4,6 @@ nav_order: 10
 ---
 # FAQ
 
-<!-- Status: draft (answers are checked against the code before release) -->
-
 **Can it make infinite worlds?** Unbounded worlds (endless in X and Y, streamed around the players) are coming and
 still being tested; see [Unbounded worlds](features/streaming.md). Distance detail levels (LOD) aren't in version 1.
 

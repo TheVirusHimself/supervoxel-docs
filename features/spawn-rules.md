@@ -5,8 +5,6 @@ nav_order: 15
 ---
 # Surface spawn rules (scatter)
 
-<!-- Status: checked against 8c3ed5e (headers and the demo owner's fact sheet) -->
-
 > Scatter meshes such as grass, flowers, pebbles and bushes on the world's open-sky surface. Placement comes from the
 > world seed, so every machine shows the same props without replicating them, and props update where the ground is
 > edited.

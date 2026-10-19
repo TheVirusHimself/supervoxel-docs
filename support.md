@@ -4,8 +4,6 @@ nav_order: 11
 ---
 # Support and updates
 
-<!-- Status: draft (links and reply times are filled in before release) -->
-
 ## Where to ask
 - **Email:** [ocozdemir@gmail.com](mailto:ocozdemir@gmail.com)
 

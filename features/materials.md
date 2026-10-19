@@ -5,8 +5,6 @@ nav_order: 5
 ---
 # Materials and textures
 
-<!-- Status: checked against 0f6bdf3 (headers) -->
-
 > Every block is drawn from texture arrays (one slice per block face) by four master materials: opaque, masked,
 > translucent and fluid. Each block's tint, roughness, metallic, glow and tiling come from a small parameter texture,
 > so you can change a block's look at runtime without new materials.

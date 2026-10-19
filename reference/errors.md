@@ -5,8 +5,6 @@ nav_order: 2
 ---
 # Troubleshooting and errors
 
-<!-- Status: checked against e7f2c56 (every warning and error in the source) -->
-
 SuperVoxel writes to the log category **LogSuperVoxel** (content building uses **LogSuperVoxelContent**). Open Window >
 Output Log and filter by the category. `X`, `N` and `%s` stand for names or numbers filled in at runtime.
 

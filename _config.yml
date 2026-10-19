@@ -31,8 +31,6 @@ relative_links:
   enabled: true
   collections: false
 
-# Writer files: in the repository, not in the site.
+# The repository's README is not a guide page.
 exclude:
   - README.md
-  - _template.md
-  - PUBLISH.md

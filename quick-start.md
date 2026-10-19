@@ -4,8 +4,6 @@ nav_order: 2
 ---
 # Quick start (5 minutes)
 
-<!-- Status: checked against 0f6bdf3 (headers and the plugin README) -->
-
 By the end you'll have a generated world in your level and you'll dig into it while playing.
 
 **You need:** Unreal Engine 5.8 on Windows. See the [requirements](install-and-upgrade.md#requirements).

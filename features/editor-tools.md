@@ -5,8 +5,6 @@ nav_order: 16
 ---
 # Editor tools
 
-<!-- Status: checked against 0f6bdf3 (headers) -->
-
 > See the world in the editor without pressing Play, and sculpt it in the viewport with the SuperVoxel mode: dig,
 > fill, paint, smooth and flatten, with undo. Edits made in the editor are saved with the level.
 

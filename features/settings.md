@@ -5,8 +5,6 @@ nav_order: 2
 ---
 # Settings
 
-<!-- Status: checked against e7f2c56 (headers) -->
-
 > Project-wide defaults live in Project Settings > Plugins > SuperVoxel. Each world can override them in its Details
 > panel.
 

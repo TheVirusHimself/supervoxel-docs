@@ -5,8 +5,6 @@ nav_order: 17
 ---
 # Blueprint library and events
 
-<!-- Status: checked against 0f6bdf3 (headers) -->
-
 > Helper nodes for the most common jobs, and the events you can bind to. Every node is listed in the
 > [A to Z reference](../reference/api-index.md); this page covers the helpers and events.
 

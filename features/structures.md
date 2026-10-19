@@ -5,8 +5,6 @@ nav_order: 12
 ---
 # Structures and villages
 
-<!-- Status: checked against e7f2c56 (headers; not yet run in the editor) -->
-
 > A structure template is a saved box of blocks, such as a cottage, a hut, a tower or a ruin, that you can stamp into
 > the world, rotated or mirrored. Rules can scatter structures and villages over a new world from its seed, and you
 > can place them yourself from Blueprint or C++.

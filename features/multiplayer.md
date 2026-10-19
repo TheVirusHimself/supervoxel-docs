@@ -5,8 +5,6 @@ nav_order: 14
 ---
 # Multiplayer
 
-<!-- Status: checked against 0f6bdf3 (headers) -->
-
 > The server owns every edit. Clients send their edits to the server, the server applies them and replicates them to
 > everyone as an ordered stream, and players who join late receive the whole edit history.
 

@@ -4,8 +4,6 @@ nav_order: 7
 ---
 # Example character: Bumble
 
-<!-- Status: checked against 8c3ed5e (headers and the demo owner's fact sheet) -->
-
 Bumble is the demo's playable character: a blocky little figure built from cubes in code, with a huge head, a tiny
 body, stubby legs, noodle arms and a crooked top hat. It walks, runs, jumps, digs and places blocks through the
 SuperVoxel editing API, in single player and multiplayer, so it doubles as a working example to copy from.

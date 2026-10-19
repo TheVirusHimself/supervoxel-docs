@@ -5,8 +5,6 @@ nav_order: 3
 ---
 # Terrain generator
 
-<!-- Status: checked against e7f2c56 (headers) -->
-
 > A generator fills a new world from its seed. SuperVoxel ships two: **Layered Terrain** (hills, ridges, cliffs,
 > overhangs, caves, rock layers, ore veins, surface rules, lakes and trees) and **Flat**. You can write your own.
 
