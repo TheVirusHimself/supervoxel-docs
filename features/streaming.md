@@ -8,6 +8,7 @@ nav_order: 18
 
 > An unbounded world is endless in X and Y. Chunks are generated and drawn around the players (and any actors you
 > add as anchors) and dropped again when everyone moves away. Edits are kept even while their chunks are unloaded.
+> It's opt-in: worlds are bounded unless you set World Mode to Unbounded.
 
 ## How do I...?
 - **Make an endless world:** set the world's **World Mode** to **Unbounded**. **World Size Z** is the height.
