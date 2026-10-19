@@ -11,7 +11,7 @@ nav_order: 1
 ## How do I...?
 - **Use the 450 shipped blocks:** do nothing. Worlds use the default block set, `/SuperVoxel/Blocks/BS_SuperVoxelDefault`.
 - **Add a block:** add a row to a block table (a DataTable with row type **SuperVoxelBlockDef**, or `Data/SuperVoxelBlocks.csv`),
-  then press **RebuildTextureArrays** on the block set.
+  then press **Rebuild Texture Arrays** on the block set.
 - **Override a shipped block:** make your own table with a row of the same name and list it *after* the default table
   in the block set's **Tables**. Later rows win.
 - **Use my own textures:** see [Materials and textures](materials.md).
@@ -36,13 +36,13 @@ Don't edit the shipped `BS_SuperVoxelDefault` or its table: a plugin update over
    Secondary Color, Pattern = Speckle.
 2. **Your block set:** Add > Miscellaneous > Data Asset, class **SuperVoxelBlockSet**. In its **Tables**, add the
    shipped `DT_SuperVoxelBlocks` first, then your table (later rows win).
-3. Press **RebuildTextureArrays** (Textures section) on your block set.
+3. Press **Rebuild Texture Arrays** (Textures section) on your block set.
 4. **Use your set:** set the world's **Block Set** to it, or make it the project default (Project Settings > Plugins >
    SuperVoxel > Default Block Set).
 5. Use the block: `Set Block (Voxel, "MossyGranite")`, or pick it in the sculpt mode.
 
 **Using a CSV instead:** a DataTable imported from a CSV doesn't follow later edits to the file by itself. After
-changing the CSV, right-click the table > Reimport, then press RebuildTextureArrays again.
+changing the CSV, right-click the table > Reimport, then press Rebuild Texture Arrays again.
 
 
 **C++: read a block's definition**
@@ -121,7 +121,7 @@ The full list is the block table, `Data/SuperVoxelBlocks.csv`, in the plugin.
 | Opaque / Masked / Translucent / Fluid Material | empty | Materials per variant. Empty = the project defaults |
 | Texture Resolution | 256 | Pixel size of each texture-array slice (16–4096). Rebuild the arrays after changing it |
 | Source Texture Folder | empty | Optional folder of images used before the placeholders (editor only) |
-| RebuildTextureArrays | button | Rebuilds the arrays from the block textures, the source folder and placeholders (editor only) |
+| Rebuild Texture Arrays | button | Rebuilds the arrays from the block textures, the source folder and placeholders (editor only) |
 
 ## Blueprint nodes and C++ functions
 
@@ -143,4 +143,4 @@ The full list is the block table, `Data/SuperVoxelBlocks.csv`, in the plugin.
 | "no block set (and no default block set in Project Settings > SuperVoxel); the world will be empty." | Neither the world nor the project names a block set | Set one on the world, or restore the project default |
 | "Too many block types; 'X' ignored (limit 4096)" | Over the limit | Remove unused rows |
 | "Unknown block 'X', using Air" | A name (in a save or setting) isn't in the set | Fix the name or add the block |
-| A new block looks plain grey | Texture arrays not rebuilt | Press RebuildTextureArrays |
+| A new block looks plain grey | Texture arrays not rebuilt | Press Rebuild Texture Arrays |

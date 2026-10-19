@@ -94,7 +94,7 @@ nav_order: 1
 | Random Seed (property) | World | [Generator](../features/generator.md) |
 | Rebuild | World | [Settings](../features/settings.md) |
 | Rebuild All | Scatter | [Spawn rules](../features/spawn-rules.md) |
-| RebuildTextureArrays (button) | Block set | [Materials](../features/materials.md) |
+| Rebuild Texture Arrays (button) | Block set | [Materials](../features/materials.md) |
 | Remesh All | World | [Meshing](../features/meshing.md) |
 | Remove Streaming Anchor | World | [Unbounded worlds](../features/streaming.md) |
 | Remove Voxel Meta, Clear Voxel Meta, Get Voxel Meta Keys | World | [State and metadata](../features/state-and-metadata.md) |

@@ -91,7 +91,9 @@ Follower = CreateDefaultSubobject<USuperVoxelPathFollowerComponent>(TEXT("PathFo
 // Later:
 Follower->MoveTo(World, Target);
 ```
-Needs the `"SuperVoxelNavigation"` module. See [Pathfinding](features/pathfinding.md).
+Needs the `"SuperVoxelNavigation"` module. The Character needs a controller: the follower moves it with movement input. A Character placed in the level
+gets an AI controller by itself; for one you spawn, set **Auto Possess AI** to *Placed in World or Spawned*, or
+call **Spawn Default Controller** after spawning. Without a controller it stands still. See [Pathfinding](features/pathfinding.md).
 
 ## 7. A cutaway toggle
 **Blueprint:** on a key: Get Cutaway Height → if ≥ 0: Set Cutaway Height (-1), else Set Cutaway Height (your height).

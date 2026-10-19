@@ -11,7 +11,7 @@ nav_order: 5
 
 ## How do I...?
 - **Use my own textures for a block:** set the block's Top, Side or Bottom textures in its table row, or drop images
-  in the block set's Source Texture Folder. Then press **RebuildTextureArrays**.
+  in the block set's Source Texture Folder. Then press **Rebuild Texture Arrays**.
 - **Make a block glow:** set Emissive Color and Emissive Strength in its row, or call `Set Block Material Params` at
   runtime.
 - **Change a block's look while playing:** `Set Block Material Params` (example below).
@@ -31,7 +31,7 @@ folder, or generated placeholders) and which material each variant uses.
 | Tint | Block row | white |
 
 ## Where a block face's texture comes from
-When you press **RebuildTextureArrays**, each block face uses the first of these that exists:
+When you press **Rebuild Texture Arrays**, each block face uses the first of these that exists:
 
 1. the textures set in the block's table row (Top, Side, Bottom);
 2. an image in the block set's **Source Texture Folder**, named `<Block>_<Top|Side|Bottom>_<BaseColor|Normal|Packed>.png`
@@ -84,7 +84,7 @@ A block set's own material fields override these; empty fields fall back to the 
 | Name | Blueprint | C++ | What it does |
 |---|---|---|---|
 | Set Block Material Params | yes | `ASuperVoxelWorld::SetBlockMaterialParams(Block, Tint, Roughness, Metallic, EmissiveColor, EmissiveStrength, TilingScale)` | Changes how a block is drawn at runtime |
-| RebuildTextureArrays | button on the block set | `USuperVoxelBlockSet::RebuildTextureArrays()` (editor) | Rebuilds the arrays |
+| Rebuild Texture Arrays | button on the block set | `USuperVoxelBlockSet::RebuildTextureArrays()` (editor) | Rebuilds the arrays |
 | (command line) | | `-run=SuperVoxelBuildContent [-Resolution=256] [-NoMaps]` | Rebuilds all plugin content, including the arrays (see [Editor tools](editor-tools.md)) |
 
 ## Limits and performance
@@ -96,7 +96,7 @@ A block set's own material fields override these; empty fields fall back to the 
 
 | Problem | Why | Fix |
 |---|---|---|
-| My texture doesn't show | Arrays not rebuilt, or a wrong file name in the source folder | RebuildTextureArrays; check `<Block>_<Face>_<Map>.png` |
+| My texture doesn't show | Arrays not rebuilt, or a wrong file name in the source folder | Rebuild Texture Arrays; check `<Block>_<Face>_<Map>.png` |
 | Textures look blurry | Texture Resolution is low | Raise it on the block set and rebuild |
 | Textures repeat too often or too rarely | Tiling | Change Texture Tiling on the world, or Tiling Scale per block |
 | A runtime colour change shows only for me | `Set Block Material Params` is local | Call it on every machine |

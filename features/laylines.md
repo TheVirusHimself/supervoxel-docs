@@ -21,7 +21,11 @@ nav_order: 26
    loads until you enable it. It needs SuperVoxel.
 2. Give your world the layline blocks, either way:
    - add a Data Table of `SuperVoxelBlockDef` rows to your block set's **Tables** and fill it with **Fill Block
-     Table** (Laylines library), or copy the rows into your own table under the same names;
+     Table** (Laylines library; C++: `ULaylinesBlocks::FillBlockTable` in `LaylinesBlocks.h`), or copy the rows into
+     your own table under the same names. To run it in the editor, make an **Editor Utility Blueprint** (Content
+     Browser > Add > Editor Utilities > Editor Utility Blueprint, parent Editor Utility Object), add a function marked
+     **Call In Editor** that calls Fill Block Table with your table, then right-click the Blueprint > Run (or press
+     the function's button). Save the table afterwards;
    - or call **Make Block Set With Laylines** (a copy of a block set plus the rows) and assign it to the world.
 
 Nothing runs until a world's block set has the layline rows.

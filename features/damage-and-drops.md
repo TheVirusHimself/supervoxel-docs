@@ -69,6 +69,17 @@ if (Hit.bHit)
 | On Voxel Damaged | Every machine | Voxel, Health Fraction, Instigator (for crack effects) |
 | On Voxel Broken | Server | Voxel, Block, Instigator, Drop Item, Drop Count (Drop Count 0: nothing) |
 
+**C++: give the drop to the player**
+```cpp
+// In your class: UFUNCTION() void HandleVoxelBroken(FIntVector Voxel, FName Block, AActor* Instigator, FName DropItem, int32 DropCount);
+World->OnVoxelBroken.AddDynamic(this, &AMyGameMode::HandleVoxelBroken); // on the server
+
+void AMyGameMode::HandleVoxelBroken(FIntVector Voxel, FName Block, AActor* Instigator, FName DropItem, int32 DropCount)
+{
+	// Add DropCount x DropItem to Instigator's inventory (DropCount 0: nothing dropped).
+}
+```
+
 A block's [behaviour](block-behaviors.md) also gets On Damaged and On Broken (return false for no drop).
 
 ## Limits

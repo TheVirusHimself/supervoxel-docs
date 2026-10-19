@@ -104,6 +104,10 @@ USuperVoxelFindPathAsync::FindPathAsync(World, Start, Goal, Options,
 The follower steers its Character owner with movement input, jumps up ledges higher than the character can step, and
 finds a new path when the voxels along the way change.
 
+The Character needs a controller: the follower moves it with movement input. A Character placed in the level
+gets an AI controller by itself; for one you spawn, set **Auto Possess AI** to *Placed in World or Spawned*, or
+call **Spawn Default Controller** after spawning. Without a controller it stands still.
+
 - When there's no way to the goal from where it stands (trapped in a pit, say), it fires **On Failed** once and stops
   instead of wandering back and forth on partial paths.
 - A walker stuck for 3 seconds asks for a cell-by-cell path next.

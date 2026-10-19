@@ -17,7 +17,7 @@ Seller: Onur C Ozdemir. Version: 1.0. Platform: Windows (Win64). **Coming soon t
 | The world doesn't show | Check the world's Block Set and Generator, and that the build finished ([Settings](features/settings.md)) |
 | The player falls through | Spawn after **On World Built** ([Background work](features/background-work.md)) |
 | Things pass through the terrain | Check the world's Collision Profile (default BlockAll) ([Settings](features/settings.md)) |
-| Blocks look plain grey | Press **RebuildTextureArrays** on the block set ([Materials](features/materials.md)) |
+| Blocks look plain grey | Press **Rebuild Texture Arrays** on the block set ([Materials](features/materials.md)) |
 | Nothing digs | On a client, edits go through the server; brush sizes are in voxels ([Editing](features/editing.md)) |
 
 More in [Troubleshooting and errors](reference/errors.md).
