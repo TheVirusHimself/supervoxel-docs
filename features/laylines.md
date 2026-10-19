@@ -17,7 +17,8 @@ nav_order: 26
 - **See it working:** drop a **Laylines Demo** actor on flat ground.
 
 ## Turn it on or off
-1. Enable **SuperVoxel Laylines** in Edit > Plugins (it needs SuperVoxel).
+1. Enable **SuperVoxel Laylines** in Edit > Plugins and restart the editor. It's off by default, so nothing of it
+   loads until you enable it. It needs SuperVoxel.
 2. Give your world the layline blocks, either way:
    - add a Data Table of `SuperVoxelBlockDef` rows to your block set's **Tables** and fill it with **Fill Block
      Table** (Laylines library), or copy the rows into your own table under the same names;
@@ -87,6 +88,10 @@ uses the built-in palette (dark, then blue through green and yellow to red). Dis
 black. Set Display Map picks which palette level each strength shows on one display (for example a red/green status
 light). Notify Settings Changed re-tints every display at once.
 
+**Any colour on any single display:** each display voxel carries its own colour through SuperVoxel's
+[voxel tint](state-and-metadata.md#voxel-tint). **Set Display Palette** gives one display its own 16 colours (**Get
+Display Palette** reads them back), and the colour saves, replicates and streams with the voxel.
+
 ## Project settings (`ULaylinesSettings`)
 
 | Setting | Default | What it does |
@@ -130,7 +135,7 @@ Names**).
 | Duration, mode, repeat | timer | Set/Get Timer Duration (seconds), Set Timer Duration Ticks, Set/Get Timer Mode, Set/Get Timer Repeat; Start Timer, Reset Timer; Get Timer Remaining |
 | Value, mode, pulse ticks, sequence | emitter | Set/Get Emitter Value, Mode, Pulse Ticks, Sequence; Emit, Reset Emitter; Get Emitter Output |
 | Threshold, invert | lamp, door, hatch, trigger | Set/Get Output Threshold, Set/Get Output Inverted (on while not powered) |
-| Map | display | Set/Get Display Map; Get Display Level, Get Display Color |
+| Map, Palette | display | Set/Get Display Map, Set/Get Display Palette; Get Display Level, Get Display Color |
 
 **Reading a circuit:** Get Role, Get Signal, Is On. **Rescan** restarts clocks, timers and the like on demand (they
 restart by themselves after a load or when a chunk streams in).
@@ -151,7 +156,6 @@ driven display bars (a fading wire next to a non-fading cable), and a button-sta
 
 ## Limits
 - Gate facing is horizontal only, and the textures don't show facing.
-- Display colours come from the project palette; one free colour per single display isn't available yet.
 - A running timer's saved time left is refreshed every 0.5 s (Timer Progress Seconds).
 - The part textures are drawn by code; displays are plain flat colour.
 

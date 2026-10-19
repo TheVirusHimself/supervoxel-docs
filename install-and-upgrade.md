@@ -34,7 +34,7 @@ SuperVoxel is coming soon to Fab. Once it's listed:
 | SuperVoxelNavigation | Runtime | Pathfinding: the A* search, the async node, the path-follower component | Yes |
 | SuperVoxelDemo | Runtime | Bumble, the walkers, the demo game modes and HUD, the block gallery | Yes |
 | SuperVoxelEditor | Editor | The sculpt mode, the texture-array builder, the content commandlet | Editor only; not in packaged games |
-| SuperVoxel Laylines (a separate optional plugin) | Runtime | Signal wiring: wires, switches, gates, timers, lamps, doors, displays ([Laylines](features/laylines.md)) | Yes: enable it only if you use it |
+| SuperVoxel Laylines (a separate optional plugin) | Runtime | Signal wiring: wires, switches, gates, timers, lamps, doors, displays ([Laylines](features/laylines.md)) | Yes: it's off by default; enable it only if you use it |
 
 ## Use it from C++
 Add the modules you use to your module's `Build.cs`:
