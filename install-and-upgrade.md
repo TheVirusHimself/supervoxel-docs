@@ -34,7 +34,28 @@ SuperVoxel is coming soon to Fab. Once it's listed:
 | SuperVoxelNavigation | Runtime | Pathfinding: the A* search, the async node, the path-follower component | Yes |
 | SuperVoxelDemo | Runtime | Bumble, the walkers, the demo game modes and HUD, the block gallery | Yes |
 | SuperVoxelEditor | Editor | The sculpt mode, the texture-array builder, the content commandlet | Editor only; not in packaged games |
-| SuperVoxel Laylines (a separate optional plugin) | Runtime | Signal wiring: wires, switches, gates, timers, lamps, doors, displays ([Laylines](features/laylines.md)) | Yes: it's off by default; enable it only if you use it |
+| SuperVoxelLaylines | Runtime | Signal wiring: wires, switches, gates, timers, lamps, doors, displays ([Laylines](features/laylines.md)) | Optional module: does nothing until Enable Laylines is on |
+| SuperVoxelFluids | Runtime | Flowing water and lava, emitters and drains ([Fluids](features/fluids.md)) | Optional module: does nothing until Enable Fluids is on |
+| SuperVoxelFluidsEditor | Editor | Fluids editor support | Editor only |
+
+SuperVoxel is one plugin: there are no separate Laylines or Fluids plugins to install.
+
+**Optional modules: Laylines and Fluids.** Both are part of the SuperVoxel plugin and compile with it, but do nothing
+until you turn them on in **Project Settings > Plugins > SuperVoxel > Optional Modules**:
+
+- **Enable Laylines** (off by default): creates the Laylines world subsystem. Off, layline blocks are plain blocks.
+  Applies to worlds that start after the change.
+- **Enable Fluids** (off by default): lets Fluids components run. Off, fluid blocks stay where they are and SuperVoxel
+  draws them. Applies at once.
+
+From code: **Is / Set Laylines Enabled** and **Is / Set Fluids Enabled** (C++: `USuperVoxelSettings`). The Set calls
+last for the run; the Project Settings switches are saved in `Config/DefaultGame.ini`.
+
+**Per map:** a game mode or World Settings class that implements **SuperVoxel Optional Modules** (C++:
+`ISuperVoxelOptionalModules`, `WantsLaylines` / `WantsFluids`) turns the modules on for the maps that use it, even
+with the project switches off. **Is Laylines Enabled In** / **Is Fluids Enabled In** (World Context) answer for one
+world. The demo game mode does this (its **Enable Laylines** / **Enable Fluids**, on by default), so the demo map works
+out of the box. The Fluids materials (`/SuperVoxel/Fluids`, about 8 MB) are always cooked.
 
 ## Use it from C++
 Add the modules you use to your module's `Build.cs`:
@@ -42,6 +63,8 @@ Add the modules you use to your module's `Build.cs`:
 PublicDependencyModuleNames.AddRange(new string[] { "SuperVoxel" });
 // Pathfinding too:
 PublicDependencyModuleNames.AddRange(new string[] { "SuperVoxelNavigation" });
+// Laylines or Fluids from C++:
+PublicDependencyModuleNames.AddRange(new string[] { "SuperVoxelLaylines", "SuperVoxelFluids" });
 ```
 
 ## Upgrade to a new version
@@ -50,6 +73,10 @@ PublicDependencyModuleNames.AddRange(new string[] { "SuperVoxelNavigation" });
 1. Back up your project.
 2. Read the [changelog](changelog.md) for the new version.
 3. Update the plugin (from Fab, or replace the plugin folder), then open the project and let it rebuild.
+
+**Upgrading from a pre-release** with separate Laylines and Fluids plugins: delete the old `Plugins/SuperVoxelLaylines`
+and `Plugins/SuperVoxelFluids` folders, then turn on Enable Laylines / Enable Fluids in Project Settings if you used
+them. Fluids content moved from `/SuperVoxelFluids/...` to `/SuperVoxel/Fluids/...`.
 
 ## Uninstall
 1. Remove SuperVoxel worlds and components from your levels and Blueprints.

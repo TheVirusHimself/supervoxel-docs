@@ -9,7 +9,8 @@ By the end you'll have a generated world in your level and you'll dig into it wh
 **You need:** Unreal Engine 5.8 on Windows. See the [requirements](install-and-upgrade.md#requirements).
 
 1. **Install the plugin.** Copy the `SuperVoxel` folder into your project's `Plugins` folder (or install it from
-   Fab) and open the project. Check that it's enabled in Edit > Plugins.
+   Fab) and open the project. Check that it's enabled in Edit > Plugins. Laylines and Fluids are
+   optional modules inside it, off until you turn them on (see [Install](install-and-upgrade.md#the-modules)).
 2. **Add a world.** Drag a **Super Voxel World** actor into your level. It shows in the viewport right away (flat
    ground by default).
 3. **Pick a generator.** In the Details panel, set **Generator** to **Layered Terrain**. Try a few **Seed** values

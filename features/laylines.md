@@ -6,7 +6,7 @@ nav_order: 26
 
 # Laylines: signal wiring
 
-> **SuperVoxel Laylines** is an optional plugin that adds circuits built from blocks: wires carry a signal strength
+> **Laylines** is an optional module of SuperVoxel that adds circuits built from blocks: wires carry a signal strength
 > from 0 to 15 between switches, logic gates, timers and outputs. Build doors that open on a lever or a pressure
 > plate, lights on clocks, counters and number screens, and game logic hooked to Blueprints.
 
@@ -18,8 +18,10 @@ nav_order: 26
 - **See it working:** drop a **Laylines Demo** actor on flat ground.
 
 ## Turn it on or off
-1. Enable **SuperVoxel Laylines** in Edit > Plugins and restart the editor. It's off by default, so nothing of it
-   loads until you enable it. It needs SuperVoxel.
+1. Turn on **Enable Laylines** in Project Settings > Plugins > SuperVoxel > Optional Modules (off by default). From
+   code: **Set Laylines Enabled**. It applies to worlds that start afterwards. Off, there's no Laylines subsystem and
+   layline blocks are plain blocks. A game mode can turn it on for its maps instead (see
+   [Install: the modules](../install-and-upgrade.md#the-modules)).
 2. Give your world the layline blocks, either way:
    - add a Data Table of `SuperVoxelBlockDef` rows to your block set's **Tables** and fill it with **Fill Block
      Table** (Laylines library; C++: `ULaylinesBlocks::FillBlockTable` in `LaylinesBlocks.h`), or copy the rows into
@@ -213,6 +215,7 @@ along the floor, up and over a one-block step to a lamp.
 | Problem | Why | Fix |
 |---|---|---|
 | No layline blocks to place | The world's block set has no layline rows | Fill Block Table, or Make Block Set With Laylines |
+| Parts don't react | Enable Laylines is off, or was turned on after the world started | Turn it on and restart the level |
 | A long wire goes dark at the end | Signal decay | Use cable, or set the wire's decay to Off |
 | A gate ignores its input | The input isn't at its back or sides, or the facing is wrong | Set Facing so the output points away from the inputs |
 | A big circuit updates slowly | Max Updates Per Tick reached | Raise it, or split the network |

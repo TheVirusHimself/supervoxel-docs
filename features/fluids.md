@@ -6,7 +6,7 @@ nav_order: 28
 
 # Fluids: flowing water and lava
 
-> **SuperVoxel Fluids** is an optional plugin that makes fluid blocks flow: they fall, spread, drain, level out and
+> **Fluids** is an optional module of SuperVoxel that makes fluid blocks flow: they fall, spread, drain, level out and
 > react (lava meets water and turns to stone). Choose **Block** mode for classic blocky water with endless sources, or
 > **Dynamic** mode for water that keeps its volume and can be emptied. Openings set in any surface work as springs
 > and drains.
@@ -23,7 +23,9 @@ nav_order: 28
 - **See it working:** drop a **SuperVoxel Fluid Demo** actor into a level with a world.
 
 ## Turn it on or off
-1. Enable **SuperVoxel Fluids** in Edit > Plugins (it needs SuperVoxel).
+1. Turn on **Enable Fluids** in Project Settings > Plugins > SuperVoxel > Optional Modules (off by default; it applies
+   at once). From code: **Set Fluids Enabled**. A game mode can turn it on for its maps instead (see
+   [Install: the modules](../install-and-upgrade.md#the-modules)).
 2. Turn it on for a world, either way:
    - add the **SuperVoxel Fluids** component to the world actor;
    - or call **Enable Fluids (World)** (Blueprint or C++). It adds the component with the default Water and Molten
@@ -221,10 +223,10 @@ All on the component (`USuperVoxelFluidComponent`) unless noted.
 On a client, Add Fluid and Add Emitter ask the server.
 
 ## The look
-- The plugin's liquid material (`M_SuperVoxelFluids_Liquid`) draws ripples on water tops, streaks and foam on falling
+- The plugin's liquid material (`M_SuperVoxelFluids_Liquid`, in `/SuperVoxel/Fluids`) draws ripples on water tops, streaks and foam on falling
   water, and crust with glowing cracks on any fluid whose block gives light. Its parameters: Normal Strength, Waterfall
   Speed, Foam Strength, Lava Glow Strength (through Get Fluid Material Instance).
-- **The plugin draws every fluid** in its own meshes, and the world draws none (the world's
+- **Fluids draws every fluid** in its own meshes, and the world draws none (the world's
   [fluid surface](meshing.md#fluid-surfaces) is set to Hidden). So when only fluid changes, chunk meshes aren't
   rebuilt. Collision, traces and queries work as before.
 - **Look per fluid type**, set with the row's **Look** or **Set Fluid Look** (the same way on every machine):
@@ -263,7 +265,7 @@ every 8 seconds while a spring refills its basin.
 
 | Problem | Why | Fix |
 |---|---|---|
-| Water doesn't move | No fluids component, Simulate is off, or the fluid has no row | Add the component (Enable Fluids), tick Simulate, add a row |
+| Water doesn't move | Enable Fluids is off in Project Settings, there's no fluids component, Simulate is off, or the fluid has no row | Turn on Enable Fluids, add the component, tick Simulate, add a row |
 | Water flows on the server only | Clients don't simulate; they get edits | Expected. Check the world replicates |
 | A lake never empties | Block mode: still voxels are endless sources | Use Dynamic mode, or remove the sources |
 | Water stops at a plant | The plant isn't washable | Tick Fluid Can Destroy, or add it to Washable Blocks |
