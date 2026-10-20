@@ -32,6 +32,12 @@ follows edits. You can still use the navmesh elsewhere.
 **Does it work with Lumen and Nanite?** It works with Lumen, and ambient occlusion is baked into the mesh. Voxel meshes
 that change at runtime don't use Nanite.
 
+**No terrain preview in the editor?** The preview is started when you place or change the world, but it's finished
+from the world's tick, and the editor only ticks a viewport while it's **Realtime** (Ctrl+R, or the viewport's
+options menu). Unreal turns Realtime off while the editor is in the background (Editor Preferences > General >
+Performance > **Use Less CPU when in Background**), so switch it back on, or untick that preference. Also check
+**Preview In Editor** on the world is on.
+
 **Which platforms?** Windows (Win64) is built and tested. The code is platform-neutral, but Linux and Mac aren't
 verified yet (see the [Roadmap](roadmap.md)).
 
