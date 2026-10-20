@@ -19,8 +19,9 @@ nav_order: 26
 
 ## Turn it on or off
 1. Turn on **Enable Laylines** in Project Settings > Plugins > SuperVoxel > Optional Modules (off by default). From
-   code: **Set Laylines Enabled**. It applies to worlds that start afterwards. Off, there's no Laylines subsystem and
-   layline blocks are plain blocks. A game mode can turn it on for its maps instead (see
+   code: **Set Laylines Enabled**. A world decides when it begins play; after changing the switch at runtime, call
+   **Refresh Laylines Active**. Off, the Laylines subsystem is inert (Get returns null) and layline blocks are plain
+   blocks. A game mode can turn it on for its maps instead (see
    [Install: the modules](../install-and-upgrade.md#the-modules)).
 2. Give your world the layline blocks, either way:
    - add a Data Table of `SuperVoxelBlockDef` rows to your block set's **Tables** and fill it with **Fill Block
@@ -215,7 +216,7 @@ along the floor, up and over a one-block step to a lamp.
 | Problem | Why | Fix |
 |---|---|---|
 | No layline blocks to place | The world's block set has no layline rows | Fill Block Table, or Make Block Set With Laylines |
-| Parts don't react | Enable Laylines is off, or was turned on after the world started | Turn it on and restart the level |
+| Parts don't react | Enable Laylines is off, or was turned on after the world started | Turn it on, then call Refresh Laylines Active (or restart the level) |
 | A long wire goes dark at the end | Signal decay | Use cable, or set the wire's decay to Off |
 | A gate ignores its input | The input isn't at its back or sides, or the facing is wrong | Set Facing so the output points away from the inputs |
 | A big circuit updates slowly | Max Updates Per Tick reached | Raise it, or split the network |
