@@ -21,7 +21,7 @@ The stations: digging, damage and drops, smooth and blocky, structures, cutaway 
 falling blocks, walkers, props, [Laylines](features/laylines.md) and [Fluids](features/fluids.md) (each when its plugin
 is enabled), and multiplayer.
 
-- **Hide or show the signs:** F2, or the help menu's station signs row (pad: Menu).
+- **Hide or show the signs:** F10, or the help menu's station signs row (pad: Menu).
 - **Edit the text:** the rows are in `DT_SuperVoxelDemoStations` (row structure `SuperVoxelDemoStationRow`): Title,
   Body, Guide Page, Kind (what the station builds), Order, Ring Scale (how far out it sits) and Enabled. In Body, a key
   in braces such as `{Dig}` or `{Camera}` shows as that key for the device in use.
@@ -63,18 +63,18 @@ right stick click), and the HUD always shows the key beside the hotbar.
 | B | Brush shape |
 | F | Fly (Space / Alt for up / down) |
 | Z / X / C | Cutaway down / up / off |
-| F5 / F9 | Save / load |
+| F6 / F7 | Save / load |
 | = | UI scale: 75 / 100 / 125 / 150% |
 | . (period) | Build the feature showcase in front of Bumble |
-| F1 | Open this page in the online guide |
+| Home | Open this page in the online guide |
 | Tab | Show or hide help |
-| F2 | Show or hide the station signs |
+| F10 | Show or hide the station signs |
 
 **Commands**
 
 | Key | Action |
 |---|---|
-| ; (semicolon) | Build an overhang |
+| 0 | Build an overhang |
 | U | Place a cottage |
 | L | Build a village |
 | T | Call the walkers |
@@ -133,6 +133,9 @@ Every action works on a gamepad, and the HUD shows pad labels while a pad is in 
 Walker paths and the station signs are in the help menu (Menu). Both sticks have a 0.2 dead zone, and the right
 stick looks without inverting.
 
+The demo keys stay clear of the editor's own debug keys. **Esc** ends Play in the editor, so it doesn't close menus:
+use E (palette), Tab (help) and Enter (search).
+
 **In the palette:** the d-pad moves, A fills the current slot, LB / RB pick the slot, LT / RT change tab, B closes.
 
 ## The feature showcase
@@ -145,8 +148,8 @@ Press **.** (or call **Stamp Showcase** from Blueprint) to build a small showcas
 ## The block palette
 Press **E** (pad: **Y**) to open the palette, a compact panel with:
 
-- **category tabs** (pad: LT / RT; keyboard: Page Up / Page Down);
-- a **search box**: press **/** to type, Enter or Esc to finish;
+- **category tabs** (pad: LT / RT; keyboard: [ and ] while the palette is open);
+- a **search box**: press **/** to type, Enter to finish;
 - a **recent** row of the blocks you used last;
 - a **grid** of blocks, with each block's name in a tooltip.
 
