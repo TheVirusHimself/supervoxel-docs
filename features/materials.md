@@ -90,7 +90,7 @@ A block set's own material fields override these; empty fields fall back to the 
 ## Limits and performance
 - One draw section per variant per chunk, so many block types cost no extra draw calls.
 - Higher Texture Resolution means more texture memory (4 maps × slices × resolution²).
-- The placeholder textures are made by the plugin's own code; no external or AI art.
+- Some terrain textures were created with generative AI tools; the rest are procedurally generated. The placeholder textures for blocks without their own are made by the plugin's code.
 
 ## Troubleshooting
 
